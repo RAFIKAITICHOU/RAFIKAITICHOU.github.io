@@ -125,3 +125,11 @@
     box-shadow: 0 0 0 0.2rem rgba(0, 212, 255, 0.25);
     color: var(--text-primary);
 }
+
+.contact-item small {
+    color: #6c757d !important;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
