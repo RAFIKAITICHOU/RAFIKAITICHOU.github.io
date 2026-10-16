@@ -5,33 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/logoo.jpg" />
-    <title>About - AIT ICHOU Rafik</title>
+    <title>About Me - AIT ICHOU Rafik</title>
     <meta name="keywords"
-        content="AIT ICHOU Rafik, computer engineer, cybersecurity, web development, portfolio, EMSI, Laravel developer, Python, Data Science, Machine Learning, Networks, IT Security, DevOps, Docker">
+        content="AIT ICHOU Rafik, about me, software engineer, EMSI, profile, full-stack, internship, PFE">
     <meta name="description"
-        content="About AIT ICHOU Rafik, computer engineering student at EMSI, specialized in cybersecurity, web development, data science and intelligent systems.">
+        content="Discover the journey, engineering philosophy, and career vision of AIT ICHOU Rafik, future software engineer at EMSI.">
     <meta name="author" content="AIT ICHOU Rafik">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Me - AIT ICHOU Rafik">
+    <meta property="og:description" content="Background, skills, and ambitions of a future full-stack engineer.">
+    <meta property="og:image" content="https://rafikaitichou.github.io/assets/photo.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rafikaitichou.github.io/en/about.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/bootstrap-custom.css">
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Instant Dark Mode Detection -->
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
 </head>
 
-<body>
+<body class="inner-page">
     <!-- NAVIGATION -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top scrolled">
         <div class="container">
-            <a class="navbar-brand" href="index.html">ICHOU.IT</a>
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-badge">&lt;/&gt;</span>
+                <span class="brand-text">ICHOU.IT</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
                         <a class="nav-link active" href="about.html">About</a>
                     </li>
@@ -56,126 +87,214 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                    <li class="nav-item dropdown ms-lg-2">
+                        <a class="nav-link dropdown-toggle lang-select-btn" href="#" id="languageDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe me-1"></i>EN
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item" href="../index.html">Français</a></li>
-                            <li><a class="dropdown-item active" href="#">English</a></li>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="../about.html"><i class="fas fa-language me-2"></i>Français</a></li>
+                            <li><a class="dropdown-item active" href="about.html"><i class="fas fa-check me-2 text-danger"></i>English</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <button class="theme-toggle-btn" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- PAGE-SPECIFIC CONTENT -->
-    <section class="section" style="padding-top: 100px;">
+    <!-- MAIN SECTION ABOUT -->
+    <main class="section section-page">
         <div class="container">
-            <h1 class="section-title"><i class="fas fa-user me-2"></i>About</h1>
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-lg-8">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h1 class="section-title text-center"><i class="fas fa-user me-2"></i>About Me</h1>
+                <p class="text-muted mx-auto" style="max-width: 65ch;">
+                    An overview of my engineering background, development philosophy, and graduation internship ambitions.
+                </p>
+            </div>
+
+            <div class="card p-4 p-lg-5" data-aos="fade-up" data-aos-delay="100">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 order-2 order-lg-1">
+                        <h2 class="h3 mb-3 text-accent"><i class="fas fa-terminal me-2"></i>Software &amp; Information Systems Engineer</h2>
                         <p>
-                            Fifth-year engineering student in Computer Science and Networks at EMSI,
-                            specializing in <strong>Digital Development & Information Systems</strong>.
+                            Final-year engineering student in Computer and Networks at <strong>EMSI</strong>, specializing in <strong>Digital Development &amp; Information Systems</strong>, also pursuing a Master's degree in <strong>Emerging Technologies</strong> at ENS Marrakech.
+                        </p>
+                        <p>
+                            Driven by resilient software architectures, robotics, automation, and intelligent systems, I design comprehensive web and mobile solutions that streamline operational processes and deliver measurable business value.
+                        </p>
+                        <p>
+                            Methodical and result-oriented, I prioritize <strong>software quality</strong> across every project lifecycle (JUnit 5 unit tests, Selenium E2E automation, SonarQube static code analysis, Docker containerization, and CI/CD pipelines).
+                        </p>
+                        <p>
+                            I am actively seeking a 4 to 6-month <strong>Graduation Internship (PFE)</strong> starting <strong>January 25, 2027</strong> within an ambitious technical team.
                         </p>
 
-                        <p>
-                            Passionate about software development, robotics, automation, and intelligent
-                            systems, I am particularly interested in designing computing solutions that
-                            simplify work, improve productivity, and assist users in their daily tasks.
-                        </p>
-
-                        <p>
-                            Curious and highly motivated, I continuously develop my skills through hands-on
-                            projects, technical training, and experimental work, with the goal of putting
-                            technology at the service of people.
-                        </p>
-
-                        <p>
-                            My ambition is to become a versatile computer engineer capable of designing,
-                            developing, and automating reliable and innovative systems that bring real added
-                            value to businesses and society.
-                        </p>
-
-                        <p>
-                            On this portfolio, you will find an overview of my academic background, technical
-                            skills, professional experiences, and personal projects. Feel free to contact me
-                            for any collaboration opportunities or to learn more about my work.
-                        </p>
-
-                        <p>
-                            Thank you for visiting, and enjoy exploring!
-                        </p>
+                        <div class="d-flex flex-wrap gap-3 mt-4">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cvModal">
+                                <i class="fas fa-file-pdf me-2"></i>View My CV
+                            </button>
+                            <a href="contact.html" class="btn btn-outline-primary">
+                                <i class="fas fa-paper-plane me-2"></i>Discuss an Opportunity
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-lg-4 text-center">
-                        <img src="../assets/photo.jpeg" alt="Profile photo AIT ICHOU Rafik"
-                            class="img-fluid rounded-circle mb-3" style="max-width: 200px;">
-                    </div>
-                    <div class="mt-3">
-                        <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#cvModal">
-                            <i class="fas fa-eye me-2"></i>View My CV
-                        </button>
 
-                        <a href="../Cv/CV_AIT ICHOU_Rafik.pdf" download class="btn btn-primary">
-                            <i class="fas fa-download me-2"></i>Download CV
-                        </a>
+                    <div class="col-lg-4 text-center order-1 order-lg-2 mb-4 mb-lg-0">
+                        <div class="profile-pic-wrapper mx-auto">
+                            <img src="../assets/photo.jpeg" alt="Profile photo AIT ICHOU Rafik"
+                                class="profile-pic clickable-photo" data-bs-toggle="modal" data-bs-target="#photoModal"
+                                width="220" height="220" loading="lazy">
+                            <div class="profile-badge-overlay" title="EMSI Marrakech">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <span class="badge bg-success text-white py-2 px-3 rounded-pill">
+                                <i class="fas fa-circle-check me-1"></i> Available PFE Jan 2027
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Back button -->
-            <div class="text-center mt-5">
+            <!-- Back to Home -->
+            <div class="text-center mt-5" data-aos="fade-up">
                 <a href="index.html" class="btn btn-primary">
                     <i class="fas fa-arrow-left me-2"></i>Back to Home
                 </a>
             </div>
         </div>
-    </section>
+    </main>
+
+    <!-- Photo Modal -->
+    <div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="photoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="photoModalLabel">AIT ICHOU Rafik</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-3">
+                    <img src="../assets/photo.jpeg" alt="Profile photo AIT ICHOU Rafik" class="img-fluid rounded" style="max-height: 70vh; object-fit: contain;">
+                </div>
+                <div class="modal-footer border-0 justify-content-center">
+                    <p class="text-muted mb-0">Future Computer &amp; Networks Engineer • EMSI</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CV Modal -->
+    <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cvModalLabel">
+                        <i class="fas fa-file-pdf text-danger me-2"></i>
+                        <span id="cvModalTitle">Curriculum Vitae - AIT ICHOU Rafik</span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cvChoiceView">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="card h-100 text-center p-3">
+                                    <div class="card-body d-flex flex-column">
+                                        <i class="fas fa-user-graduate fa-3x mb-3 text-accent"></i>
+                                        <h5>General CV</h5>
+                                        <p class="small text-muted flex-grow-1">Web &amp; mobile development, software architecture, and information systems.</p>
+                                        <div class="d-grid gap-2 mt-3">
+                                            <button type="button" class="btn btn-primary btn-cv-preview"
+                                                data-cv="../Cv/CV_AIT_ICHOU_Rafik_PFE.pdf" data-title="General CV">
+                                                <i class="fas fa-eye me-2"></i>Preview
+                                            </button>
+                                            <a href="../Cv/CV_AIT_ICHOU_Rafik_PFE.pdf" download class="btn btn-outline-primary">
+                                                <i class="fas fa-download me-2"></i>Download
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 text-center p-3">
+                                    <div class="card-body d-flex flex-column">
+                                        <i class="fas fa-laptop-code fa-3x mb-3 text-accent"></i>
+                                        <h5>Full-Stack Development</h5>
+                                        <p class="small text-muted flex-grow-1">Spring Boot, Angular, Flutter, Laravel, Next.js, and databases.</p>
+                                        <div class="d-grid gap-2 mt-3">
+                                            <button type="button" class="btn btn-primary btn-cv-preview"
+                                                data-cv="../Cv/CV_AIT_ICHOU_Rafik_PFE__développement_full_stack_et_mobile.pdf"
+                                                data-title="Full-Stack &amp; Mobile CV">
+                                                <i class="fas fa-eye me-2"></i>Preview
+                                            </button>
+                                            <a href="../Cv/CV_AIT_ICHOU_Rafik_PFE__développement_full_stack_et_mobile.pdf" download class="btn btn-outline-primary">
+                                                <i class="fas fa-download me-2"></i>Download
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 text-center p-3">
+                                    <div class="card-body d-flex flex-column">
+                                        <i class="fas fa-vial-circle-check fa-3x mb-3 text-accent"></i>
+                                        <h5>Testing &amp; Quality</h5>
+                                        <p class="small text-muted flex-grow-1">Selenium, JUnit 5, Mockito, SonarQube, JMeter, and CI/CD pipelines.</p>
+                                        <div class="d-grid gap-2 mt-3">
+                                            <button type="button" class="btn btn-primary btn-cv-preview"
+                                                data-cv="../Cv/CV_AIT_ICHOU_Rafik_PFE_Testing.pdf" data-title="Testing &amp; Quality CV">
+                                                <i class="fas fa-eye me-2"></i>Preview
+                                            </button>
+                                            <a href="../Cv/CV_AIT_ICHOU_Rafik_PFE_Testing.pdf" download class="btn btn-outline-primary">
+                                                <i class="fas fa-download me-2"></i>Download
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cvPreviewView" class="d-none">
+                        <button type="button" class="btn btn-sm btn-outline-secondary mb-3" id="cvBackBtn">
+                            <i class="fas fa-arrow-left me-2"></i>Back to choice
+                        </button>
+                        <iframe id="cvFrame" src="" width="100%" height="600px" style="border: 1px solid var(--border);" title="CV Preview"></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a id="cvDownloadBtn" href="#" download class="btn btn-primary d-none">
+                        <i class="fas fa-download me-2"></i>Download this CV
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer-section">
         <div class="container text-center">
             <div class="footer-divider"></div>
-            <p>&copy; 2025 AIT ICHOU Rafik • Computer and Networks Engineer</p>
+            <p class="footer-copy">&copy; 2025-2027 AIT ICHOU Rafik • Computer &amp; Networks Engineer</p>
+            <p class="small text-white-50">Available for a graduation internship starting January 25, 2027</p>
+            <div class="footer-links">
+                <a href="mailto:rafikaitichou@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/RAFIKAITICHOU" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rafik-ait-ichou/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="../js/script.js"></script>
-    <!-- CV Modal -->
-    <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title" id="cvModalLabel">
-                        <i class="fas fa-file-pdf text-danger me-2"></i>
-                        CV - AIT ICHOU Rafik
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                <div class="modal-body p-0">
-                    <iframe src="../Cv/CV_AIT ICHOU_Rafik.pdf" width="100%" height="600px" style="border: none;">
-                    </iframe>
-                </div>
-
-                <div class="modal-footer">
-                    <a href="../Cv/CV_AIT ICHOU_Rafik.pdf" download class="btn btn-primary">
-                        <i class="fas fa-download me-2"></i>Download CV
-                    </a>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Close
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

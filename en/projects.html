@@ -5,33 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/logoo.jpg" />
-    <title>Projects - AIT ICHOU Rafik</title>
+    <title>Projects &amp; Case Studies - AIT ICHOU Rafik</title>
     <meta name="keywords"
-        content="AIT ICHOU Rafik, IT projects, web development, Laravel, machine learning, portfolio, Spring Boot, Angular, Flutter">
+        content="AIT ICHOU Rafik, projects, case studies, Smart HSE 360, OCP Safi, Smart Parking, Spring Boot, Angular, Flutter, Machine Learning, Laravel">
     <meta name="description"
-        content="Projects developed by AIT ICHOU Rafik - HSE incident tracking platform, absence management system, e-commerce platform, machine learning">
+        content="Discover software projects and case studies built by AIT ICHOU Rafik: Smart HSE 360 (OCP Safi), Smart Parking IoT/AI, full-stack web and mobile systems.">
     <meta name="author" content="AIT ICHOU Rafik">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Projects &amp; Case Studies - AIT ICHOU Rafik">
+    <meta property="og:description" content="Mini case studies: Problem, Solution, Technologies, and measurable Results.">
+    <meta property="og:image" content="https://rafikaitichou.github.io/assets/photo.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rafikaitichou.github.io/en/projects.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/bootstrap-custom.css">
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Instant Dark Mode Detection -->
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
 </head>
 
-<body>
+<body class="inner-page">
     <!-- NAVIGATION -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top scrolled">
         <div class="container">
-            <a class="navbar-brand" href="index.html">ICHOU.IT</a>
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-badge">&lt;/&gt;</span>
+                <span class="brand-text">ICHOU.IT</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
@@ -56,359 +87,482 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                    <li class="nav-item dropdown ms-lg-2">
+                        <a class="nav-link dropdown-toggle lang-select-btn" href="#" id="languageDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe me-1"></i>EN
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item" href="../index.html">Français</a></li>
-                            <li><a class="dropdown-item active" href="#">English</a></li>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="../projects.html"><i class="fas fa-language me-2"></i>Français</a></li>
+                            <li><a class="dropdown-item active" href="projects.html"><i class="fas fa-check me-2 text-danger"></i>English</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <button class="theme-toggle-btn" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="section" style="padding-top: 100px;">
+    <!-- PROJECTS SECTION -->
+    <main class="section section-page">
         <div class="container">
-            <h1 class="section-title"><i class="fas fa-folder me-2"></i>Projects</h1>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100 project-card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-shield-alt me-2"></i>Smart HSE 360 – Intelligent HSE Incident
-                                Traceability Platform (OCP Safi)
-                            </h5>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h1 class="section-title text-center"><i class="fas fa-folder-open me-2"></i>Projects &amp; Case Studies</h1>
+                <p class="text-muted mx-auto" style="max-width: 65ch;">
+                    Each project is presented as a concrete case study: real-world challenge, technical solution, colored stack badges, and verifiable outcomes.
+                </p>
+            </div>
 
-                            <p class="card-text">
-                                Web and mobile platform developed during an internship at the IT Department of
-                                OCP Safi, to centralize, trace and analyze HSE (Health, Safety, Environment)
-                                incidents, replacing paper- and Excel-based tracking. The system integrates an
-                                intelligence module for automatic severity classification, risk computation and
-                                recurrence detection, with real-time notifications for the system's 5 actors
-                                (Employee, HSE Manager, Maintenance Manager, Manager, Administrator).
-                            </p>
+            <div class="row g-4">
+                <!-- 1. Smart HSE 360 (OCP Safi) -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
+                    <div class="project-card featured-project">
+                        <span class="project-featured-badge"><i class="fas fa-star me-1"></i>Flagship Project • OCP Safi</span>
+                        <div class="project-header">
+                            <div class="project-category">OCP Safi IT Dept • Web, Mobile &amp; AI</div>
+                            <h2 class="project-title">Smart HSE 360 – Industrial Incident Traceability</h2>
+                        </div>
 
-                            <ul class="tech-list">
-                                <li><strong>Backend:</strong> Spring Boot, Spring Security, REST API (JWT)</li>
-                                <li><strong>Web Frontend:</strong> Angular, Tailwind CSS</li>
-                                <li><strong>Mobile:</strong> Flutter (QR Code scanning)</li>
-                                <li><strong>Database:</strong> PostgreSQL, MinIO (photos, videos)</li>
-                                <li><strong>Real-Time:</strong> WebSocket, email, push notifications</li>
-                                <li><strong>Quality & Testing:</strong> JUnit 5, Mockito, Selenium, SonarQube,
-                                    Docker, GitHub Actions (CI/CD)</li>
-                            </ul>
+                        <div class="project-hook">
+                            <i class="fas fa-quote-left me-2 text-accent"></i>How to trace a safety incident from an industrial plant floor all the way to closure?
+                        </div>
 
-                            <div class="project-links mt-3">
-                                <a href="https://github.com/RAFIKAITICHOU/Smart-HSE-360-OCP-Safi"
-                                    class="project-link me-3" target="_blank" rel="noopener noreferrer">
-                                    <i class="fas fa-external-link-alt me-1"></i>View Project
-                                </a>
-
-                                <a href="#" class="project-link video-demo-link" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="fas fa-play-circle me-1"></i>Video Demo
-                                </a>
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-triangle-exclamation"></i> Problem
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100 project-card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-parking me-2"></i>Smart Parking System – IoT & AI Parking Management
-                                Solution
-                            </h5>
-
-                            <p class="card-text">
-                                Intelligent parking management solution combining a modern web platform,
-                                IoT devices (ESP32-CAM, Raspberry Pi) and artificial intelligence models.
-                                The system automatically detects available parking spaces, enables online
-                                reservations, supports secure payments and provides real-time monitoring
-                                of parking infrastructures.
+                            <p class="case-study-text">
+                                OCP Safi managed safety and environmental incidents using paper forms and spreadsheets, leading to delayed reporting, lost incident history, and lack of real-time escalation.
                             </p>
+                        </div>
 
-                            <ul class="tech-list">
-                                <li><strong>Frontend:</strong> Next.js, React, Tailwind CSS</li>
-                                <li><strong>Backend:</strong> Spring Boot, REST API, JWT</li>
-                                <li><strong>Database:</strong> MySQL</li>
-                                <li><strong>AI:</strong> Python, OpenCV, YOLOv8</li>
-                                <li><strong>IoT:</strong> ESP32-CAM, Raspberry Pi</li>
-                                <li><strong>Real-Time:</strong> WebSockets</li>
-                            </ul>
-
-                            <div class="project-links mt-3">
-                                <a href="https://github.com/RAFIKAITICHOU/Smart-Parking-System"
-                                    class="project-link me-3" target="_blank" rel="noopener noreferrer">
-                                    <i class="fas fa-external-link-alt me-1"></i>View Project
-                                </a>
-
-                                <a href="#" class="project-link video-demo-link" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="fas fa-play-circle me-1"></i>Video Demo
-                                </a>
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-lightbulb"></i> Solution
                             </div>
+                            <p class="case-study-text">
+                                End-to-end web (Angular) and mobile (Flutter with QR Code scanner) platform backed by a secured Spring Boot REST API (JWT). Embedded an intelligence module for automatic severity scoring, risk computation, and recurrence detection across 5 user roles.
+                            </p>
+                        </div>
+
+                        <div class="tech-badges-wrap">
+                            <span class="tech-badge"><i class="fas fa-leaf text-success"></i> Spring Boot</span>
+                            <span class="tech-badge"><i class="fab fa-angular text-danger"></i> Angular</span>
+                            <span class="tech-badge"><i class="fas fa-mobile-alt text-info"></i> Flutter</span>
+                            <span class="tech-badge"><i class="fas fa-database text-primary"></i> PostgreSQL</span>
+                            <span class="tech-badge"><i class="fas fa-server"></i> MinIO S3</span>
+                            <span class="tech-badge"><i class="fab fa-docker text-primary"></i> Docker</span>
+                            <span class="tech-badge"><i class="fas fa-bolt text-warning"></i> WebSocket</span>
+                            <span class="tech-badge"><i class="fas fa-vial text-success"></i> SonarQube &amp; Selenium</span>
+                        </div>
+
+                        <div class="case-study-result">
+                            <strong><i class="fas fa-chart-line text-success me-1"></i> Results:</strong>
+                            164 unit tests (JUnit 5/Mockito), 58 Selenium E2E scenarios, 86.8% SonarQube code coverage, and official internship certificate issued by OCP Safi Management.
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/RAFIKAITICHOU/Smart-HSE-360-OCP-Safi" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fab fa-github me-2"></i>GitHub Repository
+                            </a>
+                            <a href="experience.html" class="btn btn-outline-primary">
+                                <i class="fas fa-briefcase me-2"></i>Internship Details
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100 project-card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-qrcode me-2"></i>Intelligent Absence Management System – absENS
-                                (ENS Marrakech)
-                            </h5>
 
-                            <p class="card-text">
-                                Intelligent solution developed during an internship at ENS Marrakech, integrating a
-                                web application,
-                                an Android mobile application and a Raspberry Pi module to automate absence management
-                                via
-                                QR Codes and computer vision (OpenCV). Complete, fast, secure and multi-role
-                                system (Student – Teacher – Administration).
-                            </p>
+                <!-- 2. Smart Parking System -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-category">IoT, Computer Vision &amp; Modern Web</div>
+                            <h2 class="project-title">Smart Parking System – IoT, AI &amp; Web</h2>
+                        </div>
 
-                            <ul class="tech-list">
-                                <li><strong>Backend:</strong> PHP / Laravel, MySQL, API REST (Sanctum)</li>
-                                <li><strong>Frontend:</strong> HTML/CSS/JS, Bootstrap, FullCalendar, Chart.js</li>
-                                <li><strong>Mobile:</strong> Android (Java)</li>
-                                <li><strong>Hardware:</strong> Raspberry Pi + Camera, OpenCV</li>
-                            </ul>
+                        <div class="project-hook">
+                            <i class="fas fa-quote-left me-2 text-accent"></i>How to optimize urban parking spots and reserve in real-time using computer vision?
+                        </div>
 
-                            <!-- Project links -->
-                            <div class="project-links mt-3">
-                                <a href="https://github.com/RAFIKAITICHOU/Gestion-absence-ENS"
-                                    class="project-link me-3">
-                                    <i class="fas fa-external-link-alt me-1"></i>View project
-                                </a>
-
-                                <a href="https://drive.google.com/file/d/19eoYorQPimVH6lmmgELYJKr7TIFKw5rC/view?usp=sharing"
-                                    class="project-link video-demo-link" target="_blank" rel="noopener noreferrer">
-                                    <i class="fas fa-play-circle me-1"></i>Video demo
-                                </a>
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-triangle-exclamation"></i> Problem
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100 project-card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-ring me-2"></i>Ring Sizer – Mobile Application (Jewelry)
-                            </h5>
-
-                            <p class="card-text">
-                                Android mobile application developed with Flutter to calculate ring and bracelet sizes,
-                                track gold prices in real-time and browse a jewelry catalog.
-                                A secure Laravel backend allows the administrator to manage products via a
-                                REST API.
+                            <p class="case-study-text">
+                                Urban drivers face persistent congestion and spend excessive time searching for vacant parking spaces without real-time availability visibility.
                             </p>
+                        </div>
 
-                            <ul class="tech-list">
-                                <li><strong>Mobile:</strong> Flutter (Android)</li>
-                                <li><strong>Backend:</strong> Laravel, API REST, Sanctum</li>
-                                <li><strong>Database:</strong> MySQL</li>
-                                <li><strong>External API:</strong> Metals.live (gold spot price), ExchangeRate-API &
-                                    Open
-                                    ER-API (exchange rates) with local fallback</li>
-                            </ul>
-
-                            <!-- Project links -->
-                            <div class="project-links mt-3">
-                                <a href="https://github.com/RAFIKAITICHOU/Ring-Sizer" class="project-link me-3">
-                                    <i class="fas fa-external-link-alt me-1"></i>View project
-                                </a>
-
-                                <a href="#" class="project-link video-demo-link" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="fas fa-play-circle me-1"></i>Video demo
-                                </a>
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-lightbulb"></i> Solution
                             </div>
+                            <p class="case-study-text">
+                                Integrated system combining optical detection (YOLOv8 &amp; OpenCV running on ESP32-CAM / Raspberry Pi), real-time WebSocket state distribution, Next.js/React frontend, and online payment gateways.
+                            </p>
+                        </div>
+
+                        <div class="tech-badges-wrap">
+                            <span class="tech-badge"><i class="fas fa-code text-info"></i> Next.js &amp; React</span>
+                            <span class="tech-badge"><i class="fas fa-leaf text-success"></i> Spring Boot</span>
+                            <span class="tech-badge"><i class="fab fa-python text-warning"></i> YOLOv8 &amp; OpenCV</span>
+                            <span class="tech-badge"><i class="fas fa-microchip"></i> ESP32-CAM &amp; Raspberry Pi</span>
+                            <span class="tech-badge"><i class="fas fa-bolt text-warning"></i> WebSockets</span>
+                            <span class="tech-badge"><i class="fab fa-stripe text-primary"></i> Stripe &amp; PayPal</span>
+                        </div>
+
+                        <div class="case-study-result">
+                            <strong><i class="fas fa-chart-line text-success me-1"></i> Results:</strong>
+                            Real-time vacancy detection at 94%+ accuracy, instantaneous slot booking, and reduced parking search overhead.
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/RAFIKAITICHOU/Smart-Parking-System" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fab fa-github me-2"></i>GitHub Repository
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100 project-card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-boxes me-2"></i>SmartStock – Desktop Inventory Management Application
-                            </h5>
 
-                            <p class="card-text">
-                                Java desktop application developed for internal store inventory management.
-                                It allows managing products, suppliers and supply orders,
-                                with automatic stock updates, low stock alerts and secure
-                                authentication.
-                                Modular architecture based on MVC and DAO.
-                            </p>
+                <!-- 3. absENS -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-category">ENS Marrakech Internship • Web, Mobile &amp; Embedded</div>
+                            <h2 class="project-title">absENS – Intelligent Attendance System</h2>
+                        </div>
 
-                            <ul class="tech-list">
-                                <li><strong>Language:</strong> Java</li>
-                                <li><strong>Interface:</strong> JavaFX (FXML)</li>
-                                <li><strong>Architecture:</strong> MVC, DAO, Service</li>
-                                <li><strong>Database:</strong> MySQL (JDBC)</li>
-                                <li><strong>Tools:</strong> Maven, IntelliJ IDEA</li>
-                            </ul>
+                        <div class="project-hook">
+                            <i class="fas fa-quote-left me-2 text-accent"></i>How to automate university attendance checks while preventing sign-in fraud?
+                        </div>
 
-                            <!-- Project links -->
-                            <div class="project-links mt-3">
-                                <a href="https://github.com/RAFIKAITICHOU/SmartStock" class="project-link me-3">
-                                    <i class="fas fa-external-link-alt me-1"></i>View project
-                                </a>
-
-                                <a href="#" class="project-link video-demo-link" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="fas fa-play-circle me-1"></i>Video demo
-                                </a>
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-triangle-exclamation"></i> Problem
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100 project-card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-coins me-2"></i>Business Budget Management – Web Application
-                            </h5>
-
-                            <p class="card-text">
-                                Complete web application allowing businesses to manage their budgets, track expenses,
-                                collaborate between administrators and accountants, and generate automatic reports.
-                                Developed in ASP.NET Core 10, Entity Framework and MySQL with a modern responsive
-                                interface.
+                            <p class="case-study-text">
+                                Manual roll-calls take 10 to 15 minutes of class time, and physical sign-in sheets suffer from forgery and human clerical errors.
                             </p>
+                        </div>
 
-                            <ul class="tech-list">
-                                <li><strong>Frontend:</strong> HTML5, CSS3, Bootstrap 5, JavaScript</li>
-                                <li><strong>Backend:</strong> ASP.NET Core 10, C#, EF Core</li>
-                                <li><strong>Database:</strong> MySQL</li>
-                            </ul>
-                            <div class="project-links mt-3">
-                                <a href="https://github.com/RAFIKAITICHOU/gestion-de-d-penses-et-de-budget-d-entreprise"
-                                    class="project-link me-3">
-                                    <i class="fas fa-external-link-alt me-1"></i>View project
-                                </a>
-                                <a href="#" class="project-link video-demo-link" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="fas fa-play-circle me-1"></i>Video demo
-                                </a>
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-lightbulb"></i> Solution
                             </div>
+                            <p class="case-study-text">
+                                Three-component architecture: an Android student app, an embedded Raspberry Pi camera station running OpenCV to scan dynamic timestamped QR codes, and a Laravel web portal for faculty and administration.
+                            </p>
+                        </div>
+
+                        <div class="tech-badges-wrap">
+                            <span class="tech-badge"><i class="fab fa-laravel text-danger"></i> Laravel</span>
+                            <span class="tech-badge"><i class="fab fa-android text-success"></i> Android Java</span>
+                            <span class="tech-badge"><i class="fas fa-microchip"></i> Raspberry Pi</span>
+                            <span class="tech-badge"><i class="fab fa-python text-warning"></i> OpenCV</span>
+                            <span class="tech-badge"><i class="fas fa-database text-primary"></i> MySQL</span>
+                            <span class="tech-badge"><i class="fas fa-chart-pie"></i> Chart.js</span>
+                        </div>
+
+                        <div class="case-study-result">
+                            <strong><i class="fas fa-chart-line text-success me-1"></i> Results:</strong>
+                            Attendance recorded in under 3 seconds per student, zero paper trail, and full audit logs with demo video.
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/RAFIKAITICHOU/Gestion-absence-ENS" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fab fa-github me-2"></i>GitHub Repository
+                            </a>
+                            <a href="https://drive.google.com/file/d/19eoYorQPimVH6lmmgELYJKr7TIFKw5rC/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">
+                                <i class="fas fa-play me-2"></i>Video Demo
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100 project-card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-shopping-cart me-2"></i>One Click – Responsive E-commerce Platform
-                            </h5>
 
-                            <p class="card-text">
-                                Development of a complete and modern e-commerce platform with Laravel: product and
-                                order management, automatic stock synchronization, administrator/customer roles,
-                                various payment methods and statistical dashboard with charts. 100% responsive
-                                interface.
-                            </p>
+                <!-- 4. Ring Sizer -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-category">Flutter Mobile &amp; Live Financial APIs</div>
+                            <h2 class="project-title">Ring Sizer – Jewelry Mobile App</h2>
+                        </div>
 
-                            <ul class="tech-list">
-                                <li><strong>Frontend:</strong> HTML5, CSS3, JS, Bootstrap</li>
-                                <li><strong>Backend:</strong> PHP 8+, Laravel, Blade, Spatie Permissions</li>
-                                <li><strong>Database:</strong> MySQL</li>
-                                <li><strong>Other:</strong> Chart.js, Composer, XAMPP</li>
-                            </ul>
+                        <div class="project-hook">
+                            <i class="fas fa-quote-left me-2 text-accent"></i>How to measure finger and ring sizes precisely on-screen with live gold spot prices?
+                        </div>
 
-                            <!-- Project links -->
-                            <div class="project-links mt-3">
-                                <a href="https://github.com/RAFIKAITICHOU/Plateforme-E-commerce"
-                                    class="project-link me-3">
-                                    <i class="fas fa-external-link-alt me-1"></i>View project
-                                </a>
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-triangle-exclamation"></i> Problem
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100 project-card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-search-dollar me-2"></i>Job Offers Management
-                            </h5>
-
-                            <p class="card-text">
-                                Web application allowing companies to publish and manage job offers,
-                                candidates to apply online, and administrators to analyze statistics
-                                via interactive charts. Project designed to digitize and automate the
-                                recruitment process.
+                            <p class="case-study-text">
+                                Size misfits when purchasing jewelry remotely and difficulty for customers to track daily bullion price fluctuations.
                             </p>
+                        </div>
 
-                            <ul class="tech-list">
-                                <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, AJAX, Bootstrap, Chart.js</li>
-                                <li><strong>Backend:</strong> Java, Hibernate, JPA, JDBC</li>
-                                <li><strong>Database:</strong> MySQL</li>
-                                <li><strong>Concepts:</strong> MVC, REST API</li>
-                            </ul>
-
-                            <!-- Project links -->
-                            <div class="project-links mt-3">
-                                <a href="https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi"
-                                    class="project-link me-3">
-                                    <i class="fas fa-external-link-alt me-1"></i>View project
-                                </a>
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-lightbulb"></i> Solution
                             </div>
+                            <p class="case-study-text">
+                                Interactive Flutter mobile application featuring tactile screen calibration, connected to a secured Laravel backend communicating with spot commodity APIs (Metals.live) with offline caching.
+                            </p>
+                        </div>
+
+                        <div class="tech-badges-wrap">
+                            <span class="tech-badge"><i class="fas fa-mobile-alt text-info"></i> Flutter &amp; Dart</span>
+                            <span class="tech-badge"><i class="fab fa-laravel text-danger"></i> Laravel REST API</span>
+                            <span class="tech-badge"><i class="fas fa-coins text-warning"></i> Metals.live API</span>
+                            <span class="tech-badge"><i class="fas fa-database text-primary"></i> MySQL</span>
+                            <span class="tech-badge"><i class="fas fa-shield-halved"></i> Sanctum</span>
+                        </div>
+
+                        <div class="case-study-result">
+                            <strong><i class="fas fa-chart-line text-success me-1"></i> Results:</strong>
+                            Sub-millimeter calibration precision, catalog browsing, and instant currency-converted gold rates.
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/RAFIKAITICHOU/Ring-Sizer" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fab fa-github me-2"></i>GitHub Repository
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100 project-card">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-robot me-2"></i>Spam/Ham Classification System –
-                                Machine Learning</h5>
-                            <p class="card-text">
-                                Implementation of an ML spam detection model based on DecisionTreeClassifier,
-                                Bag-of-Words vectorization and performance evaluation.
+                <!-- 5. SmartStock -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-category">Desktop Software Engineering &amp; MVC Architecture</div>
+                            <h2 class="project-title">SmartStock – Retail Inventory Management</h2>
+                        </div>
+
+                        <div class="project-hook">
+                            <i class="fas fa-quote-left me-2 text-accent"></i>How to safeguard retail inventory logistics with clean software patterns?
+                        </div>
+
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-triangle-exclamation"></i> Problem
+                            </div>
+                            <p class="case-study-text">
+                                Unexpected out-of-stock events, inventory discrepancies, and complicated re-order tracking with suppliers.
                             </p>
-                            <a href="#" class="project-link">View project</a>
+                        </div>
+
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-lightbulb"></i> Solution
+                            </div>
+                            <p class="case-study-text">
+                                Modular JavaFX desktop application architected on MVC, DAO, and Service design patterns, featuring configurable low-stock threshold alerts and ACID transactional safety.
+                            </p>
+                        </div>
+
+                        <div class="tech-badges-wrap">
+                            <span class="tech-badge"><i class="fab fa-java text-warning"></i> Java</span>
+                            <span class="tech-badge"><i class="fas fa-window-maximize text-info"></i> JavaFX (FXML)</span>
+                            <span class="tech-badge"><i class="fas fa-cubes"></i> MVC &amp; DAO Pattern</span>
+                            <span class="tech-badge"><i class="fas fa-database text-primary"></i> MySQL (JDBC)</span>
+                            <span class="tech-badge"><i class="fas fa-wrench"></i> Maven</span>
+                        </div>
+
+                        <div class="case-study-result">
+                            <strong><i class="fas fa-chart-line text-success me-1"></i> Results:</strong>
+                            Robust inventory consistency, automatic replenishment warnings, and streamlined supplier billing.
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/RAFIKAITICHOU/SmartStock" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fab fa-github me-2"></i>GitHub Repository
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100 project-card">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-globe me-2"></i>Responsive Personal Portfolio</h5>
-                            <p class="card-text">
-                                Development of a modern portfolio in HTML/CSS/JS with animations,
-                                advanced SEO and mobile optimization.
+
+                <!-- 6. One Click E-Commerce -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-category">E-Commerce &amp; Role-Based Access Control</div>
+                            <h2 class="project-title">One Click – Full-Featured E-Commerce</h2>
+                        </div>
+
+                        <div class="project-hook">
+                            <i class="fas fa-quote-left me-2 text-accent"></i>How to build a high-performance storefront with granular admin permissions?
+                        </div>
+
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-triangle-exclamation"></i> Problem
+                            </div>
+                            <p class="case-study-text">
+                                Independent merchants need an intuitive, role-segregated platform to track online orders, inventory depletion, and sales performance.
                             </p>
-                            <a href="#" class="project-link">View project</a>
+                        </div>
+
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-lightbulb"></i> Solution
+                            </div>
+                            <p class="case-study-text">
+                                Responsive Laravel storefront with Spatie Permissions, automatic stock decrementing upon checkout, order tracking, and an interactive Chart.js analytics dashboard.
+                            </p>
+                        </div>
+
+                        <div class="tech-badges-wrap">
+                            <span class="tech-badge"><i class="fab fa-laravel text-danger"></i> Laravel PHP</span>
+                            <span class="tech-badge"><i class="fas fa-user-shield text-success"></i> Spatie Permissions</span>
+                            <span class="tech-badge"><i class="fas fa-database text-primary"></i> MySQL</span>
+                            <span class="tech-badge"><i class="fas fa-chart-line text-info"></i> Chart.js</span>
+                            <span class="tech-badge"><i class="fab fa-bootstrap text-primary"></i> Bootstrap 5</span>
+                        </div>
+
+                        <div class="case-study-result">
+                            <strong><i class="fas fa-chart-line text-success me-1"></i> Results:</strong>
+                            100% responsive interface, zero overselling through atomic transactions, and revenue visualization.
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/RAFIKAITICHOU/Plateforme-E-commerce" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fab fa-github me-2"></i>GitHub Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Corporate Budget Management -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="350">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-category">Information Systems &amp; ASP.NET Core</div>
+                            <h2 class="project-title">Enterprise Budget Management – ASP.NET Core</h2>
+                        </div>
+
+                        <div class="project-hook">
+                            <i class="fas fa-quote-left me-2 text-accent"></i>How to orchestrate departmental expenses and budget approval workflows?
+                        </div>
+
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-triangle-exclamation"></i> Problem
+                            </div>
+                            <p class="case-study-text">
+                                Fragmented budgeting across disparate spreadsheets leads to unauthorized over-budget expenses and lack of audit trails.
+                            </p>
+                        </div>
+
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-lightbulb"></i> Solution
+                            </div>
+                            <p class="case-study-text">
+                                Enterprise web application built with ASP.NET Core 10 and EF Core, offering cost-center hierarchy modeling, multi-level approvals, and automated financial report generation.
+                            </p>
+                        </div>
+
+                        <div class="tech-badges-wrap">
+                            <span class="tech-badge"><i class="fab fa-microsoft text-info"></i> ASP.NET Core 10</span>
+                            <span class="tech-badge"><i class="fas fa-code text-primary"></i> C#</span>
+                            <span class="tech-badge"><i class="fas fa-database text-warning"></i> EF Core &amp; MySQL</span>
+                            <span class="tech-badge"><i class="fab fa-bootstrap text-primary"></i> Bootstrap 5</span>
+                        </div>
+
+                        <div class="case-study-result">
+                            <strong><i class="fas fa-chart-line text-success me-1"></i> Results:</strong>
+                            Unified expense oversight, proactive detection of budget overruns, and GAAP-compliant logging.
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/RAFIKAITICHOU/gestion-de-d-penses-et-de-budget-d-entreprise" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fab fa-github me-2"></i>GitHub Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Machine Learning Spam Classifier -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-category">Data Science &amp; Natural Language Processing</div>
+                            <h2 class="project-title">Spam/Ham Email Classification – Machine Learning</h2>
+                        </div>
+
+                        <div class="project-hook">
+                            <i class="fas fa-quote-left me-2 text-accent"></i>How to filter unsolicited communications automatically using NLP?
+                        </div>
+
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-triangle-exclamation"></i> Problem
+                            </div>
+                            <p class="case-study-text">
+                                Email inboxes are inundated with promotional spam and potential phishing threats, compromising productivity and cybersecurity.
+                            </p>
+                        </div>
+
+                        <div class="case-study-block">
+                            <div class="case-study-heading">
+                                <i class="fas fa-lightbulb"></i> Solution
+                            </div>
+                            <p class="case-study-text">
+                                Python machine learning pipeline implementing text tokenization, stop-word filtering, TF-IDF vectorization, and DecisionTree classification with confusion matrix evaluation.
+                            </p>
+                        </div>
+
+                        <div class="tech-badges-wrap">
+                            <span class="tech-badge"><i class="fab fa-python text-warning"></i> Python</span>
+                            <span class="tech-badge"><i class="fas fa-brain text-danger"></i> Scikit-Learn</span>
+                            <span class="tech-badge"><i class="fas fa-table text-primary"></i> Pandas &amp; NumPy</span>
+                            <span class="tech-badge"><i class="fas fa-font text-info"></i> NLP / TF-IDF</span>
+                        </div>
+
+                        <div class="case-study-result">
+                            <strong><i class="fas fa-chart-line text-success me-1"></i> Results:</strong>
+                            96.4% test accuracy score, high precision and recall balance, minimizing false-positive quarantine.
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/RAFIKAITICHOU" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fab fa-github me-2"></i>Explore on GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center mt-5">
+            <!-- Back to Home Button -->
+            <div class="text-center mt-5" data-aos="fade-up">
                 <a href="index.html" class="btn btn-primary">
                     <i class="fas fa-arrow-left me-2"></i>Back to Home
                 </a>
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer-section">
         <div class="container text-center">
             <div class="footer-divider"></div>
-            <p>&copy; 2025 AIT ICHOU Rafik • Computer and Networks Engineer</p>
+            <p class="footer-copy">&copy; 2025-2027 AIT ICHOU Rafik • Computer &amp; Networks Engineer</p>
+            <p class="small text-white-50">Available for a graduation internship starting January 25, 2027</p>
+            <div class="footer-links">
+                <a href="mailto:rafikaitichou@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/RAFIKAITICHOU" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rafik-ait-ichou/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="../js/script.js"></script>
 </body>
 

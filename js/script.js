@@ -1,404 +1,246 @@
-// Script pour les animations et interactions
+/**
+ * ==========================================================================
+ * AIT ICHOU Rafik - Portfolio Script
+ * Gestion du Thème Sombre, Animations AOS, Typed.js, Navigation & Modals
+ * ==========================================================================
+ */
+
+// 1. Initialisation immédiate du thème sombre pour éviter le flash blanc (FOUC)
+(function initThemeImmediately() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
+    // ----------------------------------------------------------------------
+    // 2. Gestion du Thème Sombre (Dark Mode)
+    // ----------------------------------------------------------------------
+    const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
 
-    // Gestionnaire d'erreurs global
-    try {
-        // Animation de la navbar au scroll (uniquement pour index.html)
-        const navbar = document.querySelector('.navbar');
-
-        if (!navbar) throw new Error('Navbar non trouvée');
-
-        // Fonction throttle pour optimiser les performances
-        function throttle(func, limit) {
-            let inThrottle;
-            return function () {
-                const args = arguments;
-                const context = this;
-                if (!inThrottle) {
-                    func.apply(context, args);
-                    inThrottle = true;
-                    setTimeout(() => inThrottle = false, limit);
-                }
-            }
-        }
-
-        // Navigation active selon la section visible (uniquement pour index.html)
-        function updateActiveNav() {
-            // Vérifier si on est sur la page d'accueil avec des sections
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            // Si pas de sections avec ID, on arrête
-            if (sections.length === 0) return;
-
-            let currentSection = '';
-            let currentScroll = window.scrollY + 100;
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                const sectionBottom = sectionTop + sectionHeight;
-
-                if (currentScroll >= sectionTop && currentScroll < sectionBottom) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                const href = link.getAttribute('href');
-
-                // Gérer les liens vers les pages
-                if (href === `#${currentSection}`) {
-                    link.classList.add('active');
-                }
-
-                // Marquer comme actif si c'est la page courante (pour les pages individuelles)
-                if (href === window.location.pathname.split('/').pop() ||
-                    (href.includes(currentSection) && currentSection)) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        // Mettre à jour la navigation active pour les pages individuelles
-        function updatePageActiveNav() {
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                const href = link.getAttribute('href');
-
-                if (href === currentPage) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        // Vérifier si on est sur la page d'accueil ou une page individuelle
-        const isHomePage = window.location.pathname.endsWith('index.html') ||
-            window.location.pathname.endsWith('/') ||
-            window.location.pathname === '';
-
-        if (isHomePage) {
-            // Écouter le scroll avec throttle pour performance (uniquement sur l'accueil)
-            window.addEventListener('scroll', throttle(updateActiveNav, 100));
-        } else {
-            // Pour les pages individuelles, mettre à jour la navigation active
-            updatePageActiveNav();
-        }
-
-        // Animation des éléments au défilement avec Intersection Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function (entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translate3d(0, 0, 0)'; // Hardware acceleration
-                    entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                }
-            });
-        }, observerOptions);
-
-        // Observer les sections avec gestion d'erreur
-        const sections = document.querySelectorAll('.section');
-        if (sections.length > 0) {
-            sections.forEach(section => {
-                section.style.opacity = '0';
-                section.style.transform = 'translate3d(0, 20px, 0)';
-                observer.observe(section);
-            });
-        }
-
-        // Animation des cartes avec délais progressifs
-        const cards = document.querySelectorAll('.card, .project-card');
-        cards.forEach((card, index) => {
-            card.style.transition = 'all 0.3s ease';
-            card.style.transitionDelay = `${index * 0.1}s`;
-        });
-
-        // Animation des tags avec délais progressifs
-        const tags = document.querySelectorAll('.tag');
-        tags.forEach((tag, index) => {
-            tag.style.transition = 'all 0.3s ease';
-            tag.style.transitionDelay = `${index * 0.05}s`;
-        });
-
-        // Smooth scroll pour les liens d'ancrage (uniquement sur l'accueil)
-        if (isHomePage) {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#' || !targetId) return;
-
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const targetPosition = targetElement.offsetTop - 80;
-
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-
-                        // Mettre à jour la navigation active après animation
-                        setTimeout(updateActiveNav, 300);
-
-                        // Fermer le menu mobile si ouvert
-                        const navbarCollapse = document.querySelector('.navbar-collapse');
-                        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                            const bsCollapse = new bootstrap.Collapse(navbarCollapse);
-                            bsCollapse.hide();
-                        }
-                    }
-                });
-            });
-        }
-
-        // Fonctionnalité pour la photo cliquable (uniquement si elle existe)
-        const clickablePhoto = document.querySelector('.clickable-photo');
-
-        if (clickablePhoto) {
-            // Effet de hover avancé
-            clickablePhoto.addEventListener('mouseenter', function () {
-                this.style.transform = 'scale(1.05) rotate(2deg)';
-            });
-
-            clickablePhoto.addEventListener('mouseleave', function () {
-                this.style.transform = 'scale(1) rotate(0deg)';
-            });
-
-            // Animation au clic
-            clickablePhoto.addEventListener('click', function () {
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 150);
-            });
-
-            // Accessibilité - navigation au clavier
-            clickablePhoto.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    this.click();
-                }
-            });
-        }
-
-        // Gestion du modal photo (uniquement si le modal existe)
-        const photoModal = document.getElementById('photoModal');
-
-        if (photoModal) {
-            let modalInstance = null;
-
-            // Initialiser le modal Bootstrap
-            try {
-                modalInstance = new bootstrap.Modal(photoModal);
-            } catch (error) {
-                console.warn('Erreur initialisation modal:', error);
-            }
-
-            photoModal.addEventListener('show.bs.modal', function () {
-                document.body.style.overflow = 'hidden';
-            });
-
-            photoModal.addEventListener('hidden.bs.modal', function () {
-                document.body.style.overflow = 'auto';
-            });
-
-            // Fermer le modal avec la touche Échap
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && photoModal.classList.contains('show')) {
-                    if (modalInstance) {
-                        modalInstance.hide();
-                    }
-                }
-            });
-
-            // Fermer le modal en cliquant à l'extérieur
-            photoModal.addEventListener('click', function (e) {
-                if (e.target === this) {
-                    if (modalInstance) {
-                        modalInstance.hide();
-                    }
-                }
-            });
-        }
-
-        // Préchargement de l'image pour le modal
-        function preloadImage() {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.src = 'assets/photo.jpeg';
-                img.onload = resolve;
-                img.onerror = reject;
-            });
-        }
-
-        // Précharger l'image au chargement de la page
-        window.addEventListener('load', function () {
-            preloadImage().catch(error => {
-                console.warn('Erreur préchargement image:', error);
-            });
-        });
-
-        // Mettre à jour la navigation active au chargement initial
-        if (isHomePage) {
-            updateActiveNav();
-        } else {
-            updatePageActiveNav();
-        }
-
-        // Gestion du resize pour recalculer les positions
-        let resizeTimeout;
-        window.addEventListener('resize', function () {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                if (isHomePage) {
-                    updateActiveNav();
-                } else {
-                    updatePageActiveNav();
-                }
-            }, 250);
-        });
-
-        // Initialisation des tooltips Bootstrap (si utilisés plus tard)
-        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        if (tooltipTriggerList.length > 0 && typeof bootstrap !== 'undefined' && bootstrap.Tooltip) {
-            tooltipTriggerList.map(function (tooltipTriggerEl) {
-                return new bootstrap.Tooltip(tooltipTriggerEl);
-            });
-        }
-
-        // Animation des boutons de retour
-        const backButtons = document.querySelectorAll('a[href="index.html"] .btn-primary');
-        backButtons.forEach(button => {
-            button.addEventListener('mouseenter', function () {
-                this.style.transform = 'translateX(-5px)';
-            });
-
-            button.addEventListener('mouseleave', function () {
-                this.style.transform = 'translateX(0)';
-            });
-        });
-
-        // Gestion des liens externes - ouvrir dans un nouvel onglet
-        document.querySelectorAll('a[href^="http"]').forEach(link => {
-            if (!link.getAttribute('target')) {
-                link.setAttribute('target', '_blank');
-                link.setAttribute('rel', 'noopener noreferrer');
+    function updateThemeIcons(currentTheme) {
+        themeToggleBtns.forEach(btn => {
+            const icon = btn.querySelector('i');
+            if (!icon) return;
+            if (currentTheme === 'dark') {
+                icon.className = 'fas fa-sun';
+                btn.setAttribute('aria-label', 'Activer le mode clair');
+                btn.setAttribute('title', 'Mode clair');
+            } else {
+                icon.className = 'fas fa-moon';
+                btn.setAttribute('aria-label', 'Activer le mode sombre');
+                btn.setAttribute('title', 'Mode sombre');
             }
         });
-
-    } catch (error) {
-        console.error('Erreur dans le script principal:', error);
     }
 
-    // Gestion des erreurs de ressources (images, etc.)
-    window.addEventListener('error', function (e) {
-        if (e.target.tagName === 'IMG') {
-            console.warn('Image non chargée:', e.target.src);
-            // Optionnel: afficher une image de remplacement
-            // e.target.src = 'assets/placeholder.jpg';
-        }
-    }, true);
+    // Mettre à jour l'icône au chargement
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    updateThemeIcons(currentTheme);
 
-    // Performance monitoring
-    window.addEventListener('load', function () {
-        // Log le temps de chargement
-        if (window.performance) {
-            const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
-            console.log(`Temps de chargement: ${loadTime}ms`);
-        }
+    themeToggleBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const activeTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
 
-        // Ajouter une classe pour indiquer que le chargement est terminé
-        document.body.classList.add('page-loaded');
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcons(newTheme);
+        });
     });
 
-    // Gestion du scroll pour la navbar (effet de blur/opacity)
-    let lastScrollTop = 0;
-    const navbar = document.querySelector('.navbar');
+    // ----------------------------------------------------------------------
+    // 3. Navbar au Défilement (Transparent en haut, Plein + Ombre après scroll)
+    // ----------------------------------------------------------------------
+    const navbar = document.getElementById('navbar') || document.querySelector('.navbar');
 
-    if (navbar) {
-        window.addEventListener('scroll', throttle(function () {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // Scroll vers le bas
-                navbar.style.background = 'rgba(10, 14, 39, 0.8)';
-                navbar.style.backdropFilter = 'blur(20px)';
-            } else {
-                // Scroll vers le haut
-                navbar.style.background = 'rgba(10, 14, 39, 0.95)';
-                navbar.style.backdropFilter = 'blur(10px)';
-            }
-
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-        }, 100));
+    function handleNavbarScroll() {
+        if (!navbar) return;
+        if (window.scrollY > 40) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     }
 
-    // Animation au chargement de la page
-    function initPageAnimations() {
-        // Animation progressive des éléments
-        const animatedElements = document.querySelectorAll('.card, .tag, .project-card, .contact-item');
+    window.addEventListener('scroll', handleNavbarScroll, { passive: true });
+    handleNavbarScroll(); // Vérification initiale
 
-        animatedElements.forEach((element, index) => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-
-            setTimeout(() => {
-                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }, 100 + (index * 50));
+    // ----------------------------------------------------------------------
+    // 4. Fermeture automatique du menu burger sur Mobile au clic
+    // ----------------------------------------------------------------------
+    const navCollapse = document.getElementById('navbarNav');
+    if (navCollapse && typeof bootstrap !== 'undefined') {
+        const navLinks = navCollapse.querySelectorAll('.nav-link:not(.dropdown-toggle), .dropdown-item');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navCollapse.classList.contains('show')) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(navCollapse) || new bootstrap.Collapse(navCollapse);
+                    bsCollapse.hide();
+                }
+            });
         });
     }
 
-    // Démarrer les animations après le chargement
-    window.addEventListener('load', initPageAnimations);
-});
+    // ----------------------------------------------------------------------
+    // 5. Effet de Texte Tapé (Typed.js avec fallback léger)
+    // ----------------------------------------------------------------------
+    const typedTarget = document.getElementById('typed-text');
+    if (typedTarget) {
+        const isEnglish = document.documentElement.lang === 'en';
+        const strings = isEnglish
+            ? [
+                "Full-Stack &amp; Mobile",
+                "Spring Boot &amp; Angular",
+                "Flutter &amp; Dart",
+                "Software Quality &amp; CI/CD",
+                "Intelligent Systems"
+            ]
+            : [
+                "Full-Stack &amp; Mobile",
+                "Spring Boot &amp; Angular",
+                "Flutter &amp; Dart",
+                "Qualité Logicielle &amp; CI/CD",
+                "Systèmes Intelligents"
+            ];
 
-// Fonction utilitaire pour détecter les appareils mobiles
-function isMobileDevice() {
-    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-}
+        if (typeof Typed !== 'undefined') {
+            new Typed('#typed-text', {
+                strings: strings,
+                typeSpeed: 60,
+                backSpeed: 35,
+                backDelay: 1800,
+                startDelay: 300,
+                loop: true,
+                showCursor: true,
+                cursorChar: '|'
+            });
+        } else {
+            // Fallback simple si Typed.js CDN n'est pas encore prêt
+            let stringIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
 
-// Fonction pour formater les dates si nécessaire
-function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('fr-FR', options);
-}
-function setLanguagePreference(lang) {
-    localStorage.setItem('preferred-language', lang);
-    return lang;
-}
+            function fallbackType() {
+                const currentStr = strings[stringIndex].replace(/&amp;/g, '&');
+                if (isDeleting) {
+                    typedTarget.textContent = currentStr.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typedTarget.textContent = currentStr.substring(0, charIndex + 1);
+                    charIndex++;
+                }
 
-function getLanguagePreference() {
-    return localStorage.getItem('preferred-language') ||
-        navigator.language.split('-')[0] ||
-        'fr';
-}
+                let speed = isDeleting ? 40 : 70;
 
-// Redirection basée sur la préférence
-function redirectToPreferredLanguage() {
-    const preferredLang = getLanguagePreference();
-    const currentPath = window.location.pathname;
+                if (!isDeleting && charIndex === currentStr.length) {
+                    isDeleting = true;
+                    speed = 1800;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    stringIndex = (stringIndex + 1) % strings.length;
+                    speed = 400;
+                }
 
-    // Si on est à la racine et pas déjà dans la bonne langue
-    if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
-        if (preferredLang === 'en' && !currentPath.includes('/en/')) {
-            window.location.href = 'en/index.html';
-        } else if (preferredLang === 'fr' && currentPath.includes('/en/')) {
-            window.location.href = '../index.html';
+                setTimeout(fallbackType, speed);
+            }
+            fallbackType();
         }
     }
-}
 
-// Appeler au chargement
-document.addEventListener('DOMContentLoaded', redirectToPreferredLanguage);
+    // ----------------------------------------------------------------------
+    // 6. Initialisation de AOS (Animate On Scroll)
+    // ----------------------------------------------------------------------
+    if (typeof AOS !== 'undefined') {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReducedMotion) {
+            AOS.init({
+                duration: 450,
+                easing: 'ease-out-cubic',
+                once: true,
+                offset: 50,
+                delay: 50
+            });
+        }
+    }
+
+    // ----------------------------------------------------------------------
+    // 7. Mise en Évidence de la Navigation Active
+    // ----------------------------------------------------------------------
+    function setActiveNavLink() {
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href) return;
+            const targetPage = href.split('/').pop();
+
+            if (targetPage === currentPath || (currentPath === '' && targetPage === 'index.html')) {
+                link.classList.add('active');
+            } else if (link.classList.contains('active') && targetPage !== currentPath) {
+                // Seulement retirer si non ancré
+                if (!href.startsWith('#')) {
+                    link.classList.remove('active');
+                }
+            }
+        });
+    }
+    setActiveNavLink();
+
+    // ----------------------------------------------------------------------
+    // 8. Fenêtre Modale CV (Sélection & Aperçu)
+    // ----------------------------------------------------------------------
+    const cvModal = document.getElementById('cvModal');
+    if (cvModal) {
+        const choiceView = document.getElementById('cvChoiceView');
+        const previewView = document.getElementById('cvPreviewView');
+        const frame = document.getElementById('cvFrame');
+        const title = document.getElementById('cvModalTitle');
+        const dlBtn = document.getElementById('cvDownloadBtn');
+        const backBtn = document.getElementById('cvBackBtn');
+        const DEFAULT_TITLE = title ? title.textContent : 'CV - AIT ICHOU Rafik';
+
+        function showChoice() {
+            if (previewView) previewView.classList.add('d-none');
+            if (choiceView) choiceView.classList.remove('d-none');
+            if (dlBtn) dlBtn.classList.add('d-none');
+            if (frame) frame.src = '';
+            if (title) title.textContent = DEFAULT_TITLE;
+        }
+
+        document.querySelectorAll('.btn-cv-preview').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const file = encodeURI(btn.getAttribute('data-cv') || '');
+                if (frame) frame.src = file;
+                if (dlBtn) {
+                    dlBtn.href = file;
+                    dlBtn.classList.remove('d-none');
+                }
+                if (title) title.innerHTML = btn.getAttribute('data-title') || DEFAULT_TITLE;
+                if (choiceView) choiceView.classList.add('d-none');
+                if (previewView) previewView.classList.remove('d-none');
+            });
+        });
+
+        if (backBtn) {
+            backBtn.addEventListener('click', showChoice);
+        }
+        cvModal.addEventListener('hidden.bs.modal', showChoice);
+    }
+
+    // ----------------------------------------------------------------------
+    // 9. Sécurité des Liens Externes
+    // ----------------------------------------------------------------------
+    document.querySelectorAll('a[href^="http"]').forEach(link => {
+        if (!link.getAttribute('target')) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        }
+    });
+});

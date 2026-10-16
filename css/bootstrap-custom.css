@@ -1,135 +1,209 @@
-/* Personnalisations Bootstrap pour le thème sombre */
+/* ==========================================================================
+   Bootstrap Custom Overrides - AIT ICHOU Rafik Portfolio
+   Harmonisé avec l'identité visuelle : Gris-bleu foncé / Rouge / Blanc cassé
+   ========================================================================== */
 
+/* Variables Bootstrap adaptées aux variables CSS du thème */
 :root {
-    --primary-dark: #0a0e27;
-    --secondary-dark: #1a1f3a;
-    --accent-blue: #00d4ff;
-    --accent-cyan: #0099ff;
-    --text-primary: #e6edf3;
-    --text-secondary: #8b949e;
-    --border-color: #30363d;
+    --primary: #2f3e4e;
+    --accent: #d63a3a;
+    --accent-hover: #b82828;
+    --bg: #f7f8fa;
+    --bg-alt: #ffffff;
+    --card-bg: #ffffff;
+    --text: #1f2933;
+    --text-inverse: #ffffff;
+    --muted: #6b7785;
+    --border: #e2e8f0;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --radius-pill: 9999px;
+    --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.14);
 }
 
-/* Cards */
+[data-theme="dark"] {
+    --primary: #1e293b;
+    --accent: #ef4444;
+    --accent-hover: #dc2626;
+    --bg: #0b1120;
+    --bg-alt: #111c2e;
+    --card-bg: #172338;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --border: #2c3b52;
+    --shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+/* Base Bootstrap Cards */
 .card {
-    background: rgba(26, 31, 58, 0.5);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    transition: all 0.3s ease;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    overflow: hidden;
 }
 
 .card:hover {
-    border-color: var(--accent-blue);
-    background: rgba(0, 212, 255, 0.05);
-    box-shadow: 0 0 25px rgba(0, 212, 255, 0.08);
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(214, 58, 58, 0.3);
 }
 
 .card-title {
-    color: var(--accent-blue);
-}
-
-.card-subtitle {
-    color: var(--text-secondary) !important;
-}
-
-.card-text {
-    color: var(--text-secondary);
-}
-
-/* Navbar */
-.navbar-dark .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 212, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* Responsive adjustments */
-@media (max-width: 576px) {
-    .container {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-}
-
-/* Améliorations pour les petits écrans */
-@media (max-width: 768px) {
-    .hero-section .row {
-        text-align: center;
-    }
-
-    .section-title {
-        justify-content: center;
-    }
-
-    .tags-container {
-        justify-content: center;
-    }
-}
-
-/* Personnalisation supplémentaire pour les modals */
-.modal-backdrop {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.modal-backdrop.show {
-    opacity: 0.8;
-}
-
-/* Amélioration de l'accessibilité */
-.clickable-photo:focus {
-    outline: 2px solid var(--accent-blue);
-    outline-offset: 4px;
-}
-
-/* Animation de pulse pour attirer l'attention sur la photo */
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4);
-    }
-
-    70% {
-        box-shadow: 0 0 0 10px rgba(0, 212, 255, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 212, 255, 0);
-    }
-}
-
-.pulse-animation {
-    animation: pulse 2s infinite;
-}
-
-/* Personnalisation des boutons */
-.btn-primary {
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-    border: none;
-    color: var(--primary-dark);
+    color: var(--text);
     font-weight: 600;
 }
 
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+.card-subtitle {
+    color: var(--muted) !important;
 }
 
-/* Styles pour les formulaires */
+.card-text {
+    color: var(--muted);
+}
+
+/* Boutons Bootstrap */
+.btn {
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    padding: 0.625rem 1.25rem;
+    min-height: 44px; /* Accessibilité tactile */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Bouton Primaire (Rouge Accent) */
+.btn-primary {
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--accent-hover) !important;
+    border-color: var(--accent-hover) !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 18px rgba(214, 58, 58, 0.28);
+    transform: translateY(-2px);
+}
+
+/* Bouton Contour Accent */
+.btn-outline-primary {
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+    background: transparent !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/* Bouton Contour Blanc (utilisé sur hero) */
+.btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    color: var(--primary) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background-color: var(--muted) !important;
+    border-color: var(--muted) !important;
+    color: #ffffff !important;
+}
+
+/* Modals Bootstrap */
+.modal-content {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    box-shadow: var(--shadow-hover);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border);
+}
+
+.modal-backdrop {
+    background-color: #0b1120;
+}
+
+.modal-backdrop.show {
+    opacity: 0.65;
+}
+
+/* Forms */
 .form-control {
-    background: rgba(26, 31, 58, 0.5);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: var(--radius-sm);
+    min-height: 44px;
+    padding: 0.625rem 1rem;
 }
 
 .form-control:focus {
-    background: rgba(26, 31, 58, 0.8);
-    border-color: var(--accent-blue);
-    box-shadow: 0 0 0 0.2rem rgba(0, 212, 255, 0.25);
-    color: var(--text-primary);
+    background-color: var(--card-bg);
+    border-color: var(--accent);
+    color: var(--text);
+    box-shadow: 0 0 0 0.2rem rgba(214, 58, 58, 0.15);
 }
 
-.contact-item small {
-    color: #6c757d !important;
+/* Dropdown */
+.dropdown-menu {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow);
+    padding: 0.5rem 0;
 }
 
-.text-muted {
-    color: #6c757d !important;
+.dropdown-item {
+    color: var(--text);
+    padding: 0.5rem 1rem;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: rgba(214, 58, 58, 0.08);
+    color: var(--accent);
+}
+
+.dropdown-item.active {
+    background-color: var(--accent) !important;
+    color: #ffffff !important;
+}
+
+/* Container responsive standardisé */
+.container {
+    max-width: 1140px;
 }

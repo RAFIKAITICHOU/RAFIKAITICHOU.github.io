@@ -5,33 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/logoo.jpg" />
-    <title>Experience - AIT ICHOU Rafik</title>
+    <title>Professional Experience - AIT ICHOU Rafik</title>
     <meta name="keywords"
-        content="AIT ICHOU Rafik, professional experience, OCP Safi internship, ENS Marrakech internship, computer science teaching assistant">
+        content="AIT ICHOU Rafik, professional experience, engineering intern, OCP Safi, Smart HSE 360, robotics club president, ENS Marrakech">
     <meta name="description"
-        content="Professional experiences of AIT ICHOU Rafik - Internship at OCP Safi, internship at ENS Marrakech, computer science teaching">
+        content="Professional experience of AIT ICHOU Rafik: Engineering Intern at OCP Safi IT Dept (Smart HSE 360), President E-TEAM ENS, and Robotics Trainer.">
     <meta name="author" content="AIT ICHOU Rafik">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Professional Experience - AIT ICHOU Rafik">
+    <meta property="og:description" content="Career timeline: OCP Safi, ENS Marrakech, technical leadership and robotics training.">
+    <meta property="og:image" content="https://rafikaitichou.github.io/assets/photo.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rafikaitichou.github.io/en/experience.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/bootstrap-custom.css">
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Instant Dark Mode Detection -->
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
 </head>
 
-<body>
+<body class="inner-page">
     <!-- NAVIGATION -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top scrolled">
         <div class="container">
-            <a class="navbar-brand" href="index.html">ICHOU.IT</a>
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-badge">&lt;/&gt;</span>
+                <span class="brand-text">ICHOU.IT</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
@@ -56,323 +87,201 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                    <li class="nav-item dropdown ms-lg-2">
+                        <a class="nav-link dropdown-toggle lang-select-btn" href="#" id="languageDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe me-1"></i>EN
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item" href="../index.html">Français</a></li>
-                            <li><a class="dropdown-item active" href="#">English</a></li>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="../experience.html"><i class="fas fa-language me-2"></i>Français</a></li>
+                            <li><a class="dropdown-item active" href="experience.html"><i class="fas fa-check me-2 text-danger"></i>English</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <button class="theme-toggle-btn" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="section" style="padding-top: 100px;">
+    <!-- MAIN SECTION EXPERIENCE -->
+    <main class="section section-page">
         <div class="container">
-            <h1 class="section-title"><i class="fas fa-briefcase me-2"></i>Experience</h1>
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-lg-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-shield-alt me-2"></i>Trainee Engineer – IT Department, OCP Safi
-                                </h5>
-                                <h6 class="card-subtitle mb-2 text-muted">
-                                    Information Systems Department, OCP Safi (July 2026 – August 2026)
-                                </h6>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h1 class="section-title text-center"><i class="fas fa-briefcase me-2"></i>Professional Experience</h1>
+                <p class="text-muted mx-auto" style="max-width: 65ch;">
+                    Industrial engineering internships, team leadership, architectural software delivery, and student mentoring.
+                </p>
+            </div>
 
-                                <p>
-                                    <strong>Project:</strong>
-                                    “Design and Implementation of an Intelligent Industrial HSE Incident
-                                    Traceability Platform: Case Study of OCP Safi (Smart HSE 360)”
-                                </p>
+            <div class="row g-4">
+                <!-- 1. OCP Safi IT Dept Internship -->
+                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="50">
+                    <div class="card p-4 p-lg-5 featured-project">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between mb-3">
+                            <span class="badge bg-danger text-white py-2 px-3 rounded-pill font-weight-bold">
+                                <i class="fas fa-industry me-1"></i>Engineering Internship • OCP Safi
+                            </span>
+                            <span class="text-muted small"><i class="fas fa-calendar-alt me-1"></i>July 2026 – August 2026 (2 months)</span>
+                        </div>
 
-                                <ul>
-                                    <li>
-                                        Designed and developed a web and mobile platform for HSE (Health,
-                                        Safety, Environment) incident traceability, intended to replace
-                                        paper- and Excel-based tracking with a centralized system.
-                                    </li>
-                                    <li>
-                                        Elaborated the project requirements document, the software architecture
-                                        (4 layers), and the product backlog following an Agile Scrum
-                                        methodology.
-                                    </li>
-                                    <li>
-                                        Carried out complete UML modeling: use case, class, and sequence
-                                        diagrams for the system's 5 actors.
-                                    </li>
-                                    <li>
-                                        Developed the backend with Spring Boot and Spring Security (secured
-                                        REST API with JWT), the web frontend with Angular, and the mobile
-                                        application with Flutter.
-                                    </li>
-                                    <li>
-                                        Integrated an intelligence module for automatic severity
-                                        classification, risk computation, and incident recurrence detection.
-                                    </li>
-                                    <li>
-                                        Set up a comprehensive testing strategy: 164 unit tests (JUnit 5,
-                                        Mockito), 58 end-to-end test scenarios (Selenium), and code quality
-                                        analysis with SonarQube (86.8% coverage).
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-cogs me-1"></i>
-                                        <strong>Technologies:</strong>
-                                        Spring Boot, Angular, Flutter, PostgreSQL, MinIO, Docker, JWT,
-                                        SonarQube, Selenium.
-                                    </li>
-                                </ul>
+                        <h2 class="h4 text-accent mb-1">Engineering Intern – Information Systems Directorate (DSI)</h2>
+                        <h3 class="h6 text-muted mb-3"><i class="fas fa-building me-2"></i>OCP Group – Safi Industrial Site</h3>
 
-                                <div class="attestation-text mt-3">
-                                    <em>
-                                        Certificate issued by the Administration of the OCP of
-                                        Safi, confirming the completion of a two-month internship.
-                                    </em>
-                                </div>
-                            </div>
+                        <div class="project-hook mb-3">
+                            <strong>Project:</strong> "Design and Implementation of an Intelligent HSE Incident Traceability Platform: Case of OCP Safi (Smart HSE 360)"
+                        </div>
+
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check text-accent me-2"></i><strong>Requirements &amp; Agile Methodology:</strong> Formulated the 4-tier system architecture and managed the Product Backlog using Scrum sprints.</li>
+                            <li class="mb-2"><i class="fas fa-check text-accent me-2"></i><strong>UML Modeling:</strong> Authored complete use-case, class, and sequence diagrams covering 5 distinct industrial plant personas.</li>
+                            <li class="mb-2"><i class="fas fa-check text-accent me-2"></i><strong>Full-Stack &amp; Mobile Development:</strong> Engineered a secured Spring Boot backend (REST, JWT), Angular web portal, and Flutter mobile client with camera QR scanning.</li>
+                            <li class="mb-2"><i class="fas fa-check text-accent me-2"></i><strong>Intelligent Module:</strong> Automated incident severity classification, risk matrix calculation, and anomaly recurrence detection.</li>
+                            <li class="mb-2"><i class="fas fa-check text-accent me-2"></i><strong>Software Quality &amp; Tests:</strong> 164 unit tests (JUnit 5, Mockito), 58 Selenium E2E scenarios, and 86.8% code coverage certified by SonarQube.</li>
+                        </ul>
+
+                        <div class="tech-badges-wrap mb-3">
+                            <span class="tech-badge"><i class="fas fa-leaf text-success"></i> Spring Boot</span>
+                            <span class="tech-badge"><i class="fab fa-angular text-danger"></i> Angular</span>
+                            <span class="tech-badge"><i class="fas fa-mobile-alt text-info"></i> Flutter</span>
+                            <span class="tech-badge"><i class="fas fa-database text-primary"></i> PostgreSQL</span>
+                            <span class="tech-badge"><i class="fas fa-server"></i> MinIO</span>
+                            <span class="tech-badge"><i class="fab fa-docker text-primary"></i> Docker</span>
+                            <span class="tech-badge"><i class="fas fa-vial text-success"></i> SonarQube &amp; Selenium</span>
+                        </div>
+
+                        <div class="case-study-result">
+                            <i class="fas fa-award text-success me-2"></i>
+                            <strong>Official Certificate:</strong> Formally issued by the Executive Direction of OCP Safi recognizing successful project completion and concrete plant impact.
                         </div>
                     </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-users me-2"></i>President – E-TEAM ENS Club
-                                </h5>
-                                <h6 class="card-subtitle mb-2 text-muted">
-                                    ENS – Cadi Ayyad University (Before Oct 2024 – Present)
-                                </h6>
+                </div>
 
-                                <p>
-                                    Active involvement and progressive leadership within the E-TEAM ENS Club,
-                                    with increasing responsibilities in technical management, innovation,
-                                    and strategic coordination.
-                                </p>
+                <!-- 2. E-TEAM Club President -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge bg-primary text-white py-2 px-3 rounded-pill">Leadership &amp; Management</span>
+                            <span class="text-muted small"><i class="fas fa-calendar-alt me-1"></i>2024 – Present</span>
+                        </div>
 
-                                <ul>
-                                    <li>
-                                        <strong>Active Member</strong> – Before October 2024
-                                        <br>Participated in technical workshops, collaborative projects,
-                                        and engineering-focused activities.
-                                    </li>
+                        <h2 class="h5 text-accent mb-1"><i class="fas fa-users-gear me-2"></i>President of E-TEAM ENS Club</h2>
+                        <h3 class="h6 text-muted mb-3">ENS – Cadi Ayyad University</h3>
 
-                                    <li>
-                                        <strong>Head of Software & Hardware Engineering</strong> – Oct 2024 – Jun 2025
-                                        <br>Led technical teams in software development and embedded systems projects.
-                                        <br>Supervised programming, electronics, and robotics initiatives.
-                                    </li>
+                        <p class="card-text">
+                            Progressive advancement within the premier robotics and technological society of the university:
+                        </p>
 
-                                    <li>
-                                        <strong>Head of Engineering & Technology</strong> – Jun 2025 – Feb 2026
-                                        <br>Coordinated technical divisions and innovation projects.
-                                        <br>Planned and structured large-scale engineering initiatives.
-                                        <br>Introduced advanced technology-driven solutions within the club.
-                                    </li>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i><strong>President (Feb 2026 – Present):</strong> Setting organizational vision, supervising project teams, and orchestrating university-wide hackathons.</li>
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i><strong>Head of Engineering &amp; Tech (2025 – 2026):</strong> Driving strategic initiatives in robotics, autonomous systems, and embedded computing.</li>
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i><strong>Head of Software &amp; Hardware (2024 – 2025):</strong> Leading hands-on development workshops in Arduino, Raspberry Pi, and Python.</li>
+                        </ul>
+                    </div>
+                </div>
 
-                                    <li>
-                                        <strong>President</strong> – Feb 2026 – Present
-                                        <br>Defined the strategic vision and long-term objectives of the club.
-                                        <br>Managed multidisciplinary teams and organized scientific & technical events.
-                                        <br>Officially represented the club before university administration and
-                                        partners.
-                                    </li>
+                <!-- 3. ENS Marrakech - absENS -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+                    <div class="card h-100 p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge bg-secondary text-white py-2 px-3 rounded-pill">Software Dev Intern (6 months)</span>
+                            <span class="text-muted small"><i class="fas fa-calendar-alt me-1"></i>Dec 2024 – June 2025</span>
+                        </div>
 
-                                    <li>
-                                        <i class="fas fa-cogs me-1"></i>
-                                        <strong>Skills Developed:</strong>
-                                        Leadership, project management, team coordination,
-                                        event organization, strategic planning, technical supervision.
-                                    </li>
+                        <h2 class="h5 text-accent mb-1"><i class="fas fa-laptop-code me-2"></i>Software Development Intern</h2>
+                        <h3 class="h6 text-muted mb-3">ENS Marrakech</h3>
 
-                                    <li>
-                                        <i class="fas fa-microchip me-1"></i>
-                                        <strong>Fields:</strong>
-                                        Robotics, Artificial Intelligence, Embedded Systems,
-                                        Software Development, Technological Innovation.
-                                    </li>
-                                </ul>
-                            </div>
+                        <p class="card-text">
+                            <strong>absENS Project:</strong> Conceptualized and developed an intelligent multi-role system automating student attendance check-ins.
+                        </p>
+
+                        <ul class="list-unstyled mb-3">
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i>Three-tier architecture: Android (Java) client, Laravel backend, and Raspberry Pi camera station with OpenCV.</li>
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i>Dynamic anti-fraud QR Code generation and administrative reporting.</li>
+                        </ul>
+
+                        <div class="case-study-result">
+                            <i class="fas fa-file-circle-check text-success me-2"></i>
+                            Official 6-month internship certificate issued by the management of ENS Marrakech.
                         </div>
                     </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-laptop-code me-2"></i>Software Development Intern
-                                </h5>
-                                <h6 class="card-subtitle mb-2 text-muted">
-                                    ENS Marrakech (Dec 2024 – Jun 2025)
-                                </h6>
+                </div>
 
-                                <p>
-                                    <strong>Project:</strong>
-                                    “Design and Implementation of an Intelligent Attendance Management System:
-                                    Case Study of ENS Marrakech”
-                                </p>
-
-                                <ul>
-                                    <li>
-                                        Actively participated in the design and development of an intelligent
-                                        system aimed at automating and optimizing attendance management for
-                                        students and instructors.
-                                    </li>
-                                    <li>
-                                        Analyzed functional requirements and contributed to system modeling
-                                        (actors, functionalities, and data flows).
-                                    </li>
-                                    <li>
-                                        Developed application modules and integrated the different components
-                                        of the system.
-                                    </li>
-                                    <li>
-                                        Conducted functional and technical testing to ensure system reliability,
-                                        performance, and stability.
-                                    </li>
-                                    <li>
-                                        Continuously improved the system based on user feedback and test results.
-                                    </li>
-                                    <li>
-                                        Contributed to the preparation of technical and functional project
-                                        documentation.
-                                    </li>
-                                </ul>
-
-                                <div class="attestation-text mt-3">
-                                    <em>
-                                        Certificate issued by the Administration of the École Normale Supérieure
-                                        of Marrakech, confirming the completion of a six-month internship.
-                                    </em>
-                                </div>
-                            </div>
+                <!-- 4. Robotics & AI Trainer -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge bg-success text-white py-2 px-3 rounded-pill">Technical Training</span>
+                            <span class="text-muted small"><i class="fas fa-calendar-alt me-1"></i>2025 – 2026</span>
                         </div>
+
+                        <h2 class="h5 text-accent mb-1"><i class="fas fa-robot me-2"></i>Robotics &amp; Intelligent Systems Trainer</h2>
+                        <h3 class="h6 text-muted mb-3">Cadi Ayyad University &amp; ENS Marrakech</h3>
+
+                        <p class="card-text">
+                            <strong>Green AI Workshop:</strong> Conducted immersive workshops on automated and intelligent waste management robotics.
+                        </p>
+
+                        <ul class="list-unstyled mb-3">
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i>Hands-on microcontroller programming (ESP32, Arduino, Raspberry Pi) and sensor integration.</li>
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i>Mentored student teams in crafting autonomous functional prototypes.</li>
+                        </ul>
+
+                        <a href="https://drive.google.com/drive/folders/1l10EzB1KsLmmWgl8mNhe8mUnBH4iFbqZ?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm mt-auto">
+                            <i class="fab fa-google-drive me-2"></i>Access Workshop Materials
+                        </a>
                     </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-robot me-2"></i>Robotics and Intelligent Systems Trainer
-                                </h5>
-                                <h6 class="card-subtitle mb-2 text-muted">
-                                    UCA & ENS Marrakech | 2025 – 2026
-                                </h6>
+                </div>
 
-                                <p>
-                                    <strong>Workshop:</strong> GREEN AI WORKSHOP – Robotics Project
-                                </p>
-
-                                <p>
-                                    <strong>Training Theme:</strong><br>
-                                    Development of an intelligent and automated waste management solution
-                                </p>
-
-                                <p>
-                                    <strong>Learning Objectives:</strong>
-                                </p>
-                                <ul>
-                                    <li>Understand the architecture and core components of a robot</li>
-                                    <li>Master the basics of electronics and embedded systems</li>
-                                    <li>Design and program a functional robotic system</li>
-                                </ul>
-
-                                <ul>
-                                    <li>Conducting technical robotics training for university students</li>
-                                    <li>Providing hands-on supervision in intelligent systems and automation</li>
-                                    <li>Designing and structuring project-oriented educational content</li>
-                                    <li>Supporting students in the design and implementation of intelligent solutions
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-microchip me-1"></i>
-                                        <strong>Technologies:</strong> Arduino, ESP32, Raspberry Pi, sensors, actuators
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-lightbulb me-1"></i>
-                                        <strong>Approach:</strong> Project-based learning, active pedagogy (hands-on)
-                                    </li>
-                                </ul>
-
-                                <!-- Google Drive link -->
-                                <a href="https://drive.google.com/drive/folders/1l10EzB1KsLmmWgl8mNhe8mUnBH4iFbqZ?usp=sharing"
-                                    target="_blank" class="btn btn-outline-primary mt-2">
-                                    <i class="fab fa-google-drive me-2"></i>Access the training folder
-                                </a>
-                            </div>
+                <!-- 5. Computer Science Teaching Assistant -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+                    <div class="card h-100 p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge bg-secondary text-white py-2 px-3 rounded-pill">Academic Tutoring</span>
+                            <span class="text-muted small"><i class="fas fa-calendar-alt me-1"></i>2022 – 2025</span>
                         </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-chalkboard-teacher me-2"></i>Trainee Computer Science Instructor
-                                </h5>
-                                <h6 class="card-subtitle mb-2 text-muted">2022 – 2025</h6>
-                                <ul>
-                                    <li>
-                                        Provided pedagogical support and actively contributed to the delivery of
-                                        computer science lectures and practical lab sessions.
-                                    </li>
-                                    <li>
-                                        Supervised and guided students in the completion of practical assignments,
-                                        mini-projects, and end-of-module projects.
-                                    </li>
-                                    <li>
-                                        Explained fundamental concepts of algorithms, programming, and
-                                        problem-solving techniques.
-                                    </li>
-                                    <li>
-                                        Contributed to classroom management, academic follow-up, and the assessment
-                                        of students’ learning outcomes.
-                                    </li>
-                                    <li>
-                                        Participated in the design and implementation of educational projects,
-                                        promoting collaborative work and student autonomy.
-                                    </li>
-                                    <li>
-                                        Collaborated with the teaching staff to improve course materials and
-                                        instructional methods.
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-code me-1"></i>
-                                        <strong>Languages:</strong> Python, C, Algorithms
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-tools me-1"></i>
-                                        <strong>Tools:</strong> Visual Studio Code, Microsoft Office
-                                    </li>
-                                    <li>
-                                        <strong>Teaching approaches:</strong> Active learning, project-based
-                                        learning, individualized student support
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
 
+                        <h2 class="h5 text-accent mb-1"><i class="fas fa-chalkboard-user me-2"></i>Computer Science Intern Instructor</h2>
+                        <h3 class="h6 text-muted mb-3">Education &amp; Academic Training</h3>
 
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i>Mentored students through practical lab sessions in algorithmic problem-solving and coding (Python, C).</li>
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i>Explained core data structures, recursive logic, and code optimization.</li>
+                            <li><i class="fas fa-chevron-right text-accent me-2"></i>Assisted faculty in designing practical examination benchmarks.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div class="text-center mt-5">
+            <!-- Back to Home -->
+            <div class="text-center mt-5" data-aos="fade-up">
                 <a href="index.html" class="btn btn-primary">
                     <i class="fas fa-arrow-left me-2"></i>Back to Home
                 </a>
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer-section">
         <div class="container text-center">
             <div class="footer-divider"></div>
-            <p>&copy; 2025 AIT ICHOU Rafik • Computer and Networks Engineer</p>
+            <p class="footer-copy">&copy; 2025-2027 AIT ICHOU Rafik • Computer &amp; Networks Engineer</p>
+            <p class="small text-white-50">Available for a graduation internship starting January 25, 2027</p>
+            <div class="footer-links">
+                <a href="mailto:rafikaitichou@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/RAFIKAITICHOU" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rafik-ait-ichou/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="../js/script.js"></script>
 </body>
 

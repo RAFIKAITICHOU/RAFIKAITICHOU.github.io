@@ -5,32 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/logoo.jpg" />
-    <title>Objectives - AIT ICHOU Rafik</title>
-    <meta name="keywords" content="AIT ICHOU Rafik, professional objectives, career vision, personal development">
+    <title>Career Objectives &amp; Vision - AIT ICHOU Rafik</title>
+    <meta name="keywords"
+        content="AIT ICHOU Rafik, career objectives, engineering vision, final internship, PFE 2027, full-stack engineer">
     <meta name="description"
-        content="Objectives and professional vision of AIT ICHOU Rafik - Career ambitions and development">
+        content="Discover the career ambitions and engineering vision of AIT ICHOU Rafik for his graduation internship starting January 25, 2027.">
     <meta name="author" content="AIT ICHOU Rafik">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Career Objectives &amp; Vision - AIT ICHOU Rafik">
+    <meta property="og:description" content="Career goals and engineering vision for a final graduation internship.">
+    <meta property="og:image" content="https://rafikaitichou.github.io/assets/photo.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rafikaitichou.github.io/en/objectives.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/bootstrap-custom.css">
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Instant Dark Mode Detection -->
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
 </head>
 
-<body>
+<body class="inner-page">
     <!-- NAVIGATION -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top scrolled">
         <div class="container">
-            <a class="navbar-brand" href="index.html">ICHOU.IT</a>
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-badge">&lt;/&gt;</span>
+                <span class="brand-text">ICHOU.IT</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
@@ -55,81 +87,106 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                    <li class="nav-item dropdown ms-lg-2">
+                        <a class="nav-link dropdown-toggle lang-select-btn" href="#" id="languageDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe me-1"></i>EN
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item" href="../index.html">Français</a></li>
-                            <li><a class="dropdown-item active" href="#">English</a></li>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="../objectives.html"><i class="fas fa-language me-2"></i>Français</a></li>
+                            <li><a class="dropdown-item active" href="objectives.html"><i class="fas fa-check me-2 text-danger"></i>English</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <button class="theme-toggle-btn" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="section" style="padding-top: 100px;">
+    <!-- MAIN SECTION OBJECTIVES -->
+    <main class="section section-page">
         <div class="container">
-            <h1 class="section-title"><i class="fas fa-rocket me-2"></i>Objectives & Vision</h1>
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">Professional Objective</h5>
-                                <p class="card-text">
-                                    To become a <strong>versatile computer engineer</strong>,
-                                    capable of integrating intelligent and secure solutions in the professional
-                                    world.
-                                </p>
-                                <ul>
-                                    <li>Develop robust and secure web applications</li>
-                                    <li>Implement artificial intelligence solutions</li>
-                                    <li>Contribute to innovative projects in the cybersecurity field</li>
-                                    <li>Progress towards technical leadership positions</li>
-                                </ul>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h1 class="section-title text-center"><i class="fas fa-rocket me-2"></i>Career Objectives &amp; Vision</h1>
+                <p class="text-muted mx-auto" style="max-width: 65ch;">
+                    Strategic objectives for my final graduation internship (PFE) and long-term vision as an architect of resilient software systems.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- 1. Immediate Goal -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
+                    <div class="card h-100 p-4">
+                        <div class="card-body">
+                            <div class="home-feature-icon mb-3">
+                                <i class="fas fa-bullseye"></i>
                             </div>
+                            <h2 class="h4 text-accent mb-3">Immediate Goal: 2027 Final Internship (PFE)</h2>
+                            <p class="card-text">
+                                Join an innovative engineering organization or R&amp;D team starting <strong>January 25, 2027</strong> for a 4 to 6-month graduation internship.
+                            </p>
+                            <ul class="list-unstyled mt-3 mb-0">
+                                <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i>Architect and deploy a mission-critical full-stack or mobile system from conception to production.</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i>Enforce modern engineering standards (TDD, CI/CD, SonarQube, containers, and secure APIs).</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i>Deliver measurable business impact and user satisfaction.</li>
+                                <li><i class="fas fa-check-circle text-accent me-2"></i>High interest in permanent hire transition following internship completion.</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">Personal Development</h5>
-                                <p class="card-text">
-                                    Deepen my skills in cybersecurity, advanced backend
-                                    development, system administration and artificial intelligence.
-                                </p>
-                                <ul>
-                                    <li>Master modern backend frameworks</li>
-                                    <li>Acquire IT security certifications</li>
-                                    <li>Develop cloud architecture skills</li>
-                                    <li>Contribute to open source projects</li>
-                                </ul>
+                </div>
+
+                <!-- 2. Long-term Vision -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 p-4">
+                        <div class="card-body">
+                            <div class="home-feature-icon mb-3">
+                                <i class="fas fa-compass"></i>
                             </div>
+                            <h2 class="h4 text-accent mb-3">Long-Term Career Vision</h2>
+                            <p class="card-text">
+                                Advance into a versatile <strong>Software Architect</strong> guiding resilient distributed systems and enterprise intelligent decision systems.
+                            </p>
+                            <ul class="list-unstyled mt-3 mb-0">
+                                <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i>Master cloud-native distributed microservices (Kubernetes, AWS/GCP, service meshes).</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i>Deepen DevSecOps practices, Zero Trust authentication, and OWASP compliance.</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i>Pioneer edge AI computing and operational MLOps deployment pipelines.</li>
+                                <li><i class="fas fa-check-circle text-accent me-2"></i>Contribute actively to open-source software and knowledge sharing.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center mt-5">
+            <!-- Back to Home -->
+            <div class="text-center mt-5" data-aos="fade-up">
                 <a href="index.html" class="btn btn-primary">
                     <i class="fas fa-arrow-left me-2"></i>Back to Home
                 </a>
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer-section">
         <div class="container text-center">
             <div class="footer-divider"></div>
-            <p>&copy; 2025 AIT ICHOU Rafik • Computer and Networks Engineer</p>
+            <p class="footer-copy">&copy; 2025-2027 AIT ICHOU Rafik • Computer &amp; Networks Engineer</p>
+            <p class="small text-white-50">Available for a graduation internship starting January 25, 2027</p>
+            <div class="footer-links">
+                <a href="mailto:rafikaitichou@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/RAFIKAITICHOU" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rafik-ait-ichou/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="../js/script.js"></script>
 </body>
 

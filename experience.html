@@ -5,33 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/logoo.jpg" />
-    <title>Expérience - AIT ICHOU Rafik</title>
+    <title>Expérience Professionnelle - AIT ICHOU Rafik</title>
     <meta name="keywords"
-        content="AIT ICHOU Rafik, expérience professionnelle, stage ENS Marrakech, stage OCP Safi, professeur stagiaire informatique">
+        content="AIT ICHOU Rafik, expérience professionnelle, stage ingénieur, DSI OCP Safi, Smart HSE 360, président club robotique, ENS Marrakech">
     <meta name="description"
-        content="Expériences professionnelles de AIT ICHOU Rafik - Stage à l'OCP Safi, stage à l'ENS Marrakech, enseignement en informatique">
+        content="Expériences professionnelles de AIT ICHOU Rafik : Ingénieur stagiaire à l'OCP Safi (Smart HSE 360), Président E-TEAM ENS et Formateur en robotique.">
     <meta name="author" content="AIT ICHOU Rafik">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Expérience Professionnelle - AIT ICHOU Rafik">
+    <meta property="og:description" content="Parcours professionnel : OCP Safi, ENS Marrakech, leadership associatif et formations techniques.">
+    <meta property="og:image" content="https://rafikaitichou.github.io/assets/photo.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rafikaitichou.github.io/experience.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/bootstrap-custom.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Détection immédiate du thème -->
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
 </head>
 
-<body>
+<body class="inner-page">
     <!-- NAVIGATION -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top scrolled">
         <div class="container">
-            <a class="navbar-brand" href="index.html">ICHOU.IT</a>
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-badge">&lt;/&gt;</span>
+                <span class="brand-text">ICHOU.IT</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Ouvrir le menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">À propos</a>
                     </li>
@@ -56,327 +87,201 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                    <li class="nav-item dropdown ms-lg-2">
+                        <a class="nav-link dropdown-toggle lang-select-btn" href="#" id="languageDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe me-1"></i>FR
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item active" href="#">Français</a></li>
-                            <li><a class="dropdown-item" href="en/index.html">English</a></li>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item active" href="experience.html"><i class="fas fa-check me-2 text-danger"></i>Français</a></li>
+                            <li><a class="dropdown-item" href="en/experience.html"><i class="fas fa-language me-2"></i>English</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <button class="theme-toggle-btn" type="button" aria-label="Changer de thème" title="Changer de thème">
+                            <i class="fas fa-moon"></i>
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="section" style="padding-top: 100px;">
+    <!-- MAIN SECTION EXPERIENCE -->
+    <main class="section section-page">
         <div class="container">
-            <h1 class="section-title"><i class="fas fa-briefcase me-2"></i>Expérience</h1>
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-lg-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-shield-alt me-2"></i>Ingénieur stagiaire – DSI OCP Safi
-                                </h5>
-                                <h6 class="card-subtitle mb-2 text-muted">
-                                    Direction des Systèmes d'Information, OCP Safi (Juillet 2026 – Août 2026)
-                                </h6>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h1 class="section-title text-center"><i class="fas fa-briefcase me-2"></i>Expérience Professionnelle</h1>
+                <p class="text-muted mx-auto" style="max-width: 65ch;">
+                    Mises en situation industrielle réelles, encadrement technique, conception d'architectures logicielles et responsabilités associatives.
+                </p>
+            </div>
 
-                                <p>
-                                    <strong>Projet :</strong>
-                                    « Conception et mise en œuvre d'une plateforme intelligente de traçabilité
-                                    des incidents HSE : Cas de l'OCP Safi (Smart HSE 360) »
-                                </p>
+            <div class="row g-4">
+                <!-- 1. Stage DSI OCP Safi -->
+                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="50">
+                    <div class="card p-4 p-lg-5 featured-project">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between mb-3">
+                            <span class="badge bg-danger text-white py-2 px-3 rounded-pill font-weight-bold">
+                                <i class="fas fa-industry me-1"></i>Stage Ingénieur • OCP Safi
+                            </span>
+                            <span class="text-muted small"><i class="fas fa-calendar-alt me-1"></i>Juillet 2026 – Août 2026 (2 mois)</span>
+                        </div>
 
-                                <ul>
-                                    <li>
-                                        Conception et développement d'une plateforme web et mobile de
-                                        traçabilité des incidents HSE (Hygiène, Sécurité, Environnement),
-                                        destinée à remplacer un suivi papier et Excel par un système centralisé.
-                                    </li>
-                                    <li>
-                                        Élaboration du cahier des charges, de l'architecture logicielle
-                                        (4 couches) et du product backlog selon une méthodologie Agile Scrum.
-                                    </li>
-                                    <li>
-                                        Modélisation UML complète : diagrammes de cas d'utilisation, de classes
-                                        et de séquence pour les 5 acteurs du système.
-                                    </li>
-                                    <li>
-                                        Développement backend avec Spring Boot et Spring Security (API REST
-                                        sécurisée JWT), frontend web avec Angular et application mobile avec
-                                        Flutter.
-                                    </li>
-                                    <li>
-                                        Intégration d'un module d'intelligence pour la classification
-                                        automatique de la gravité, le calcul du risque et la détection de
-                                        récurrence des incidents.
-                                    </li>
-                                    <li>
-                                        Mise en place d'une stratégie de tests complète : 164 tests unitaires
-                                        (JUnit 5, Mockito), 58 scénarios de tests end-to-end (Selenium), et
-                                        analyse de qualité de code avec SonarQube (86,8&nbsp;% de couverture).
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-cogs me-1"></i>
-                                        <strong>Technologies :</strong>
-                                        Spring Boot, Angular, Flutter, PostgreSQL, MinIO, Docker, JWT,
-                                        SonarQube, Selenium.
-                                    </li>
-                                </ul>
+                        <h2 class="h4 text-accent mb-1">Ingénieur Stagiaire – Direction des Systèmes d'Information (DSI)</h2>
+                        <h3 class="h6 text-muted mb-3"><i class="fas fa-building me-2"></i>Groupe OCP – Site industriel de Safi</h3>
 
-                                <div class="attestation-text mt-3">
-                                    <em>
-                                        Attestation délivrée par la Direction de l’OCP Safi, attestant la réalisation
-                                        d’un stage de 2 mois.
-                                    </em>
-                                </div>
-                            </div>
+                        <div class="project-hook mb-3">
+                            <strong>Projet :</strong> « Conception et mise en œuvre d'une plateforme intelligente de traçabilité des incidents HSE : Cas de l'OCP Safi (Smart HSE 360) »
+                        </div>
+
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check text-accent me-2"></i><strong>Cahier des charges &amp; Méthode Agile :</strong> Élaboration de l'architecture logicielle 4 couches et du Product Backlog selon Scrum.</li>
+                            <li class="mb-2"><i class="fas fa-check text-accent me-2"></i><strong>Modélisation UML :</strong> Diagrammes de cas d'utilisation, de classes et de séquence pour les 5 profils d'acteurs de l'usine.</li>
+                            <li class="mb-2"><i class="fas fa-check text-accent me-2"></i><strong>Développement Full-Stack &amp; Mobile :</strong> Backend sécurisé Spring Boot (JWT, API REST), frontend Angular et application mobile Flutter avec scan de QR Code.</li>
+                            <li class="mb-2"><i class="fas fa-check text-accent me-2"></i><strong>Module Intelligent :</strong> Classification automatique de gravité des incidents, matrice de calcul de risque et détection de récurrence.</li>
+                            <li class="mb-2"><i class="fas fa-check text-accent me-2"></i><strong>Assurance Qualité &amp; Tests :</strong> 164 tests unitaires (JUnit 5, Mockito), 58 tests E2E Selenium et couverture de code de 86,8% validée par SonarQube.</li>
+                        </ul>
+
+                        <div class="tech-badges-wrap mb-3">
+                            <span class="tech-badge"><i class="fas fa-leaf text-success"></i> Spring Boot</span>
+                            <span class="tech-badge"><i class="fab fa-angular text-danger"></i> Angular</span>
+                            <span class="tech-badge"><i class="fas fa-mobile-alt text-info"></i> Flutter</span>
+                            <span class="tech-badge"><i class="fas fa-database text-primary"></i> PostgreSQL</span>
+                            <span class="tech-badge"><i class="fas fa-server"></i> MinIO</span>
+                            <span class="tech-badge"><i class="fab fa-docker text-primary"></i> Docker</span>
+                            <span class="tech-badge"><i class="fas fa-vial text-success"></i> SonarQube &amp; Selenium</span>
+                        </div>
+
+                        <div class="case-study-result">
+                            <i class="fas fa-award text-success me-2"></i>
+                            <strong>Attestation Officielle :</strong> Délivrée par la Direction de l'OCP Safi attestant de la réussite du projet et de la valeur ajoutée apportée aux équipes opérationnelles.
                         </div>
                     </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-users me-2"></i>Président – Club E-TEAM ENS
-                                </h5>
-                                <h6 class="card-subtitle mb-2 text-muted">
-                                    ENS – Université Cadi Ayyad (Avant Oct. 2024 – Aujourd’hui)
-                                </h6>
+                </div>
 
-                                <p>
-                                    Engagement associatif et évolution progressive au sein du club E-TEAM ENS,
-                                    avec des responsabilités croissantes dans les domaines techniques,
-                                    organisationnels et stratégiques.
-                                </p>
+                <!-- 2. Président Club E-TEAM ENS -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge bg-primary text-white py-2 px-3 rounded-pill">Leadership Associatif</span>
+                            <span class="text-muted small"><i class="fas fa-calendar-alt me-1"></i>2024 – Présent</span>
+                        </div>
 
-                                <ul>
-                                    <li>
-                                        <strong>Membre actif</strong> – Avant Octobre 2024
-                                        <br>Participation aux activités techniques, workshops et projets collaboratifs.
-                                    </li>
+                        <h2 class="h5 text-accent mb-1"><i class="fas fa-users-gear me-2"></i>Président du Club E-TEAM ENS</h2>
+                        <h3 class="h6 text-muted mb-3">ENS – Université Cadi Ayyad</h3>
 
-                                    <li>
-                                        <strong>Chef Software & Hardware Engineer</strong> – Oct. 2024 – Juin 2025
-                                        <br>Supervision des équipes techniques (développement logiciel et systèmes
-                                        embarqués).
-                                        <br>Encadrement de projets en programmation, électronique et robotique.
-                                    </li>
+                        <p class="card-text">
+                            Évolution continue au sein du club technologique et robotique de l'université jusqu'à la présidence exécutive :
+                        </p>
 
-                                    <li>
-                                        <strong>Chef Ingénierie & Technologie</strong> – Juin 2025 – Fév. 2026
-                                        <br>Coordination des pôles techniques.
-                                        <br>Planification stratégique des projets technologiques du club.
-                                        <br>Mise en place d’initiatives innovantes en systèmes intelligents.
-                                    </li>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i><strong>Président (Fév. 2026 – Présent) :</strong> Définition de la stratégie, coordination des équipes et organisation des compétitions technologiques.</li>
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i><strong>Chef Ingénierie &amp; Technologie (2025 – 2026) :</strong> Pilotage des projets en robotique, intelligence artificielle et systèmes embarqués.</li>
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i><strong>Chef Software &amp; Hardware (2024 – 2025) :</strong> Encadrement technique des ateliers de programmation (Arduino, Raspberry Pi, Python).</li>
+                        </ul>
+                    </div>
+                </div>
 
-                                    <li>
-                                        <strong>Président</strong> – Fév. 2026 – Aujourd’hui
-                                        <br>Définition de la vision stratégique du club.
-                                        <br>Gestion d’équipe et organisation d’événements scientifiques et techniques.
-                                        <br>Représentation officielle du club auprès de l’université et des partenaires.
-                                    </li>
+                <!-- 3. Stage ENS Marrakech - absENS -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+                    <div class="card h-100 p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge bg-secondary text-white py-2 px-3 rounded-pill">Stage Développement (6 mois)</span>
+                            <span class="text-muted small"><i class="fas fa-calendar-alt me-1"></i>Déc 2024 – Juin 2025</span>
+                        </div>
 
-                                    <li>
-                                        <i class="fas fa-cogs me-1"></i>
-                                        <strong>Compétences développées :</strong>
-                                        Leadership, gestion de projet, travail en équipe, communication,
-                                        gestion d’événements, coordination technique.
-                                    </li>
+                        <h2 class="h5 text-accent mb-1"><i class="fas fa-laptop-code me-2"></i>Stagiaire en Développement Informatique</h2>
+                        <h3 class="h6 text-muted mb-3">ENS Marrakech</h3>
 
-                                    <li>
-                                        <i class="fas fa-microchip me-1"></i>
-                                        <strong>Domaines :</strong>
-                                        Robotique, Intelligence Artificielle, Systèmes embarqués,
-                                        Développement logiciel, Innovation technologique.
-                                    </li>
-                                </ul>
-                            </div>
+                        <p class="card-text">
+                            <strong>Projet absENS :</strong> Conception et développement d'un système intelligent automatisant l'émargement universitaire.
+                        </p>
+
+                        <ul class="list-unstyled mb-3">
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i>Architecture tri-couche : mobile Android (Java), backend Laravel et caméra Raspberry Pi (OpenCV).</li>
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i>Sécurisation par QR Codes dynamiques anti-fraude et rapports automatisés.</li>
+                        </ul>
+
+                        <div class="case-study-result">
+                            <i class="fas fa-file-circle-check text-success me-2"></i>
+                            Attestation délivrée par la Direction de l'ENS Marrakech pour un stage de 6 mois mené avec succès.
                         </div>
                     </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-laptop-code me-2"></i>Stagiaire en développement informatique
-                                </h5>
-                                <h6 class="card-subtitle mb-2 text-muted">
-                                    ENS Marrakech (Déc 2024 – Juin 2025)
-                                </h6>
+                </div>
 
-                                <p>
-                                    <strong>Projet :</strong>
-                                    « Conception et mise en œuvre d’un système intelligent de gestion des absences :
-                                    Cas de l’ENS Marrakech »
-                                </p>
-
-                                <ul>
-                                    <li>
-                                        Participation active à la conception et au développement d’un système
-                                        intelligent visant à automatiser et optimiser la gestion des absences
-                                        des étudiants et des enseignants.
-                                    </li>
-                                    <li>
-                                        Analyse des besoins fonctionnels et contribution à la modélisation du
-                                        système (acteurs, fonctionnalités, flux de données).
-                                    </li>
-                                    <li>
-                                        Développement de modules applicatifs et intégration des différentes
-                                        composantes du système.
-                                    </li>
-                                    <li>
-                                        Réalisation des tests fonctionnels et techniques afin d’assurer la
-                                        fiabilité, la performance et la stabilité de la solution.
-                                    </li>
-                                    <li>
-                                        Amélioration continue du système à partir des retours utilisateurs et
-                                        des tests réalisés.
-                                    </li>
-                                    <li>
-                                        Participation à la rédaction de la documentation technique et
-                                        fonctionnelle du projet.
-                                    </li>
-                                </ul>
-
-                                <div class="attestation-text mt-3">
-                                    <em>
-                                        Attestation délivrée par la Direction de l’École Normale Supérieure de
-                                        Marrakech, attestant la réalisation d’un stage de 6 mois.
-                                    </em>
-                                </div>
-                            </div>
+                <!-- 4. Formateur Robotique & IA -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge bg-success text-white py-2 px-3 rounded-pill">Formation &amp; Pédagogie</span>
+                            <span class="text-muted small"><i class="fas fa-calendar-alt me-1"></i>2025 – 2026</span>
                         </div>
+
+                        <h2 class="h5 text-accent mb-1"><i class="fas fa-robot me-2"></i>Formateur en Robotique &amp; Systèmes Intelligents</h2>
+                        <h3 class="h6 text-muted mb-3">Université Cadi Ayyad &amp; ENS Marrakech</h3>
+
+                        <p class="card-text">
+                            <strong>Green AI Workshop :</strong> Animation de workshops orientés solutions intelligentes et automatisées de gestion des déchets.
+                        </p>
+
+                        <ul class="list-unstyled mb-3">
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i>Formation pratique aux microcontrôleurs (ESP32, Arduino, Raspberry Pi) et capteurs intelligents.</li>
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i>Accompagnement d'équipes d'étudiants dans la fabrication de prototypes autonomes.</li>
+                        </ul>
+
+                        <a href="https://drive.google.com/drive/folders/1l10EzB1KsLmmWgl8mNhe8mUnBH4iFbqZ?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm mt-auto">
+                            <i class="fab fa-google-drive me-2"></i>Dossier Pédagogique
+                        </a>
                     </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-robot me-2"></i>Formateur en Robotique et Systèmes Intelligents
-                                </h5>
-                                <h6 class="card-subtitle mb-2 text-muted">
-                                    UCA & ENS Marrakech | 2025 – 2026
-                                </h6>
+                </div>
 
-                                <p>
-                                    <strong>Workshop :</strong> GREEN AI WORKSHOP – Projet de Robotique
-                                </p>
-
-                                <p>
-                                    <strong>Thème de la formation :</strong><br>
-                                    Développement d’une solution intelligente et automatisée de gestion des déchets
-                                </p>
-
-                                <p>
-                                    <strong>Objectifs pédagogiques :</strong>
-                                </p>
-                                <ul>
-                                    <li>Comprendre l’architecture et le fonctionnement d’un robot</li>
-                                    <li>Maîtriser les bases de l’électronique et des systèmes embarqués</li>
-                                    <li>Concevoir et programmer un robot fonctionnel</li>
-                                </ul>
-
-                                <ul>
-                                    <li>Animation de formations techniques en robotique destinées aux étudiants
-                                        universitaires</li>
-                                    <li>Encadrement pratique autour des systèmes intelligents et de l’automatisation
-                                    </li>
-                                    <li>Conception et structuration de contenus pédagogiques orientés projets réels</li>
-                                    <li>Accompagnement des étudiants dans la conception et l’implémentation de solutions
-                                        intelligentes</li>
-                                    <li>
-                                        <i class="fas fa-microchip me-1"></i>
-                                        <strong>Technologies :</strong> Arduino, ESP32, Raspberry Pi, capteurs,
-                                        actionneurs
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-lightbulb me-1"></i>
-                                        <strong>Approche :</strong> Apprentissage par projet, pédagogie active
-                                        (hands-on)
-                                    </li>
-                                </ul>
-
-                                <!-- Lien Google Drive -->
-                                <a href="https://drive.google.com/drive/folders/1l10EzB1KsLmmWgl8mNhe8mUnBH4iFbqZ?usp=sharing"
-                                    target="_blank" class="btn btn-outline-primary mt-2">
-                                    <i class="fab fa-google-drive me-2"></i>Accéder au dossier de la formation
-                                </a>
-                            </div>
+                <!-- 5. Enseignement & TP -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+                    <div class="card h-100 p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge bg-secondary text-white py-2 px-3 rounded-pill">Assistance Pédagogique</span>
+                            <span class="text-muted small"><i class="fas fa-calendar-alt me-1"></i>2022 – 2025</span>
                         </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-chalkboard-teacher me-2"></i>Professeur stagiaire en informatique
-                                </h5>
-                                <h6 class="card-subtitle mb-2 text-muted">2022 – 2025</h6>
-                                <ul>
-                                    <li>
-                                        Assistance pédagogique et participation active à l’animation des séances
-                                        de cours et de travaux pratiques en informatique.
-                                    </li>
-                                    <li>
-                                        Encadrement et accompagnement des étudiants dans la réalisation des
-                                        travaux pratiques, mini-projets et projets de fin de module.
-                                    </li>
-                                    <li>
-                                        Explication des concepts fondamentaux de l’algorithmique, de la
-                                        programmation et de la résolution de problèmes.
-                                    </li>
-                                    <li>
-                                        Contribution à la gestion de classes, au suivi pédagogique et à
-                                        l’évaluation des acquis des étudiants.
-                                    </li>
-                                    <li>
-                                        Participation à la conception et à la mise en œuvre de projets
-                                        pédagogiques, favorisant le travail collaboratif et l’autonomie.
-                                    </li>
-                                    <li>
-                                        Collaboration avec l’équipe enseignante pour l’amélioration des supports
-                                        de cours et des méthodes d’enseignement.
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-code me-1"></i>
-                                        <strong>Langages :</strong> Python, C, Algorithmique
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-tools me-1"></i>
-                                        <strong>Outils :</strong> Visual Studio Code, Microsoft Office
-                                    </li>
-                                    <li>
-                                        <strong>Approches pédagogiques :</strong> Pédagogie active, apprentissage
-                                        par projet, accompagnement individualisé
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
 
+                        <h2 class="h5 text-accent mb-1"><i class="fas fa-chalkboard-user me-2"></i>Professeur Stagiaire en Informatique</h2>
+                        <h3 class="h6 text-muted mb-3">Éducation &amp; Enseignement</h3>
 
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i>Encadrement et animation de séances de travaux pratiques en programmation (Python, C).</li>
+                            <li class="mb-2"><i class="fas fa-chevron-right text-accent me-2"></i>Explication claire des concepts fondamentaux d'algorithmique et structures de données.</li>
+                            <li><i class="fas fa-chevron-right text-accent me-2"></i>Pédagogie active, accompagnement personnalisé et évaluation continue des étudiants.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div class="text-center mt-5">
+            <!-- Bouton de retour -->
+            <div class="text-center mt-5" data-aos="fade-up">
                 <a href="index.html" class="btn btn-primary">
                     <i class="fas fa-arrow-left me-2"></i>Retour à l'accueil
                 </a>
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer-section">
         <div class="container text-center">
             <div class="footer-divider"></div>
-            <p>&copy; 2025 AIT ICHOU Rafik • Ingénieur en Informatique et Réseaux</p>
+            <p class="footer-copy">&copy; 2025-2027 AIT ICHOU Rafik • Ingénieur en Informatique et Réseaux</p>
+            <p class="small text-white-50">Disponible pour un stage PFE dès le 25 janvier 2027</p>
+            <div class="footer-links">
+                <a href="mailto:rafikaitichou@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/RAFIKAITICHOU" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rafik-ait-ichou/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="js/script.js"></script>
 </body>
 

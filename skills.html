@@ -5,33 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/logoo.jpg" />
-    <title>Compétences - AIT ICHOU Rafik</title>
+    <title>Compétences Techniques - AIT ICHOU Rafik</title>
     <meta name="keywords"
-        content="AIT ICHOU Rafik, compétences techniques, Laravel, PHP, Python, Docker, machine learning, big data, gestion de projet agile, Scrum, cybersécurité, Spring Boot, Angular, Flutter">
+        content="AIT ICHOU Rafik, compétences ingénieur, Back-end, Front-end, Mobile, DevOps, Tests, CI/CD, Spring Boot, Angular, Flutter, Docker, SonarQube">
     <meta name="description"
-        content="Compétences techniques de AIT ICHOU Rafik - Développement web, machine learning, big data, gestion de projet agile, cybersécurité, administration système">
+        content="Compétences techniques et méthodologiques de AIT ICHOU Rafik organisées par domaines : Back-end, Front-end, Mobile, DevOps, Qualité &amp; Tests et IA.">
     <meta name="author" content="AIT ICHOU Rafik">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Compétences Techniques - AIT ICHOU Rafik">
+    <meta property="og:description" content="Groupes de compétences : Back-end, Front-end, Mobile, DevOps, Qualité logicielle et IA.">
+    <meta property="og:image" content="https://rafikaitichou.github.io/assets/photo.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rafikaitichou.github.io/skills.html">
+
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/bootstrap-custom.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Détection immédiate du thème sombre -->
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
 </head>
 
-<body>
+<body class="inner-page">
     <!-- NAVIGATION -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top scrolled">
         <div class="container">
-            <a class="navbar-brand" href="index.html">ICHOU.IT</a>
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-badge">&lt;/&gt;</span>
+                <span class="brand-text">ICHOU.IT</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Ouvrir le menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">À propos</a>
                     </li>
@@ -56,196 +87,175 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                    <li class="nav-item dropdown ms-lg-2">
+                        <a class="nav-link dropdown-toggle lang-select-btn" href="#" id="languageDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe me-1"></i>FR
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item active" href="#">Français</a></li>
-                            <li><a class="dropdown-item" href="en/index.html">English</a></li>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item active" href="skills.html"><i class="fas fa-check me-2 text-danger"></i>Français</a></li>
+                            <li><a class="dropdown-item" href="en/skills.html"><i class="fas fa-language me-2"></i>English</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <button class="theme-toggle-btn" type="button" aria-label="Changer de thème" title="Changer de thème">
+                            <i class="fas fa-moon"></i>
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="section" style="padding-top: 100px;">
+    <!-- MAIN SECTION SKILLS -->
+    <main class="section section-page">
         <div class="container">
-            <h1 class="section-title"><i class="fas fa-cogs me-2"></i>Compétences</h1>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h1 class="section-title text-center"><i class="fas fa-cogs me-2"></i>Compétences Techniques</h1>
+                <p class="text-muted mx-auto" style="max-width: 65ch;">
+                    Une stack moderne structurée en 5 pôles d'expertise complémentaires : du back-end robuste à la qualité logicielle certifiée par tests automatisés et CI/CD.
+                </p>
+            </div>
 
-            <!-- Développement Web -->
-            <div class="mb-5">
-                <h3 class="text-accent-blue mb-4"><i class="fas fa-code me-2"></i>Développement Web</h3>
-                <div class="tags-container">
-                    <span class="tag"><i class="fas fa-leaf me-1"></i> Spring Boot</span>
-                    <span class="tag"><i class="fab fa-angular me-1"></i> Angular</span>
-                    <span class="tag"><i class="fab fa-laravel me-1"></i> Laravel</span>
-                    <span class="tag"><i class="fab fa-php me-1"></i> PHP</span>
-                    <span class="tag"><i class="fab fa-microsoft me-1"></i> .NET</span>
-                    <span class="tag"><i class="fab fa-react me-1"></i> React</span>
-                    <span class="tag"><i class="fas fa-code me-1"></i> Next.js</span>
-                    <span class="tag"><i class="fab fa-html5 me-1"></i> HTML/CSS</span>
-                    <span class="tag"><i class="fab fa-js me-1"></i> JavaScript</span>
-                    <span class="tag"><i class="fab fa-bootstrap me-1"></i> Bootstrap</span>
-                    <span class="tag"><i class="fas fa-database me-1"></i> SQL</span>
-                    <span class="tag"><i class="fas fa-database me-1"></i> NoSQL</span>
-                    <span class="tag"><i class="fas fa-plug me-1"></i> API REST</span>
+            <!-- 1. Back-end & Architecture -->
+            <div class="skills-group-card" data-aos="fade-up">
+                <div class="skills-group-header">
+                    <div class="skills-group-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div>
+                        <h2 class="skills-group-title">Back-end &amp; Architecture Systèmes</h2>
+                        <small class="text-muted">Conception d'APIs sécurisées, architectures multicouches et microservices</small>
+                    </div>
+                </div>
+                <div class="skills-tags-wrap">
+                    <span class="skill-tag-pill"><i class="fas fa-leaf text-success"></i> Spring Boot</span>
+                    <span class="skill-tag-pill"><i class="fab fa-java text-warning"></i> Java / JEE (Jakarta)</span>
+                    <span class="skill-tag-pill"><i class="fab fa-laravel text-danger"></i> Laravel (PHP 8+)</span>
+                    <span class="skill-tag-pill"><i class="fab fa-microsoft text-info"></i> ASP.NET Core &amp; C#</span>
+                    <span class="skill-tag-pill"><i class="fas fa-plug text-accent"></i> API REST &amp; JWT</span>
+                    <span class="skill-tag-pill"><i class="fas fa-network-wired text-primary"></i> Microservices &amp; Systèmes Distribués</span>
+                    <span class="skill-tag-pill"><i class="fas fa-database text-primary"></i> PostgreSQL</span>
+                    <span class="skill-tag-pill"><i class="fas fa-database text-warning"></i> MySQL</span>
+                    <span class="skill-tag-pill"><i class="fas fa-cubes text-info"></i> Architecture MVC &amp; DAO</span>
                 </div>
             </div>
 
-            <!-- Développement Mobile -->
-            <div class="mb-5">
-                <h3 class="text-accent-blue mb-4"><i class="fas fa-mobile-alt me-2"></i>Développement Mobile</h3>
-                <div class="tags-container">
-                    <span class="tag"><i class="fas fa-mobile-screen-button me-1"></i> Flutter</span>
-                    <span class="tag"><i class="fab fa-android me-1"></i> Android (Java)</span>
+            <!-- 2. Front-end & Mobile -->
+            <div class="skills-group-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="skills-group-header">
+                    <div class="skills-group-icon">
+                        <i class="fas fa-mobile-screen-button"></i>
+                    </div>
+                    <div>
+                        <h2 class="skills-group-title">Front-end &amp; Développement Mobile</h2>
+                        <small class="text-muted">Interfaces réactives, applications mobiles performantes et accessibilité</small>
+                    </div>
+                </div>
+                <div class="skills-tags-wrap">
+                    <span class="skill-tag-pill"><i class="fas fa-mobile-alt text-info"></i> Flutter &amp; Dart (Cross-platform)</span>
+                    <span class="skill-tag-pill"><i class="fab fa-angular text-danger"></i> Angular (TypeScript)</span>
+                    <span class="skill-tag-pill"><i class="fab fa-react text-info"></i> React &amp; Next.js</span>
+                    <span class="skill-tag-pill"><i class="fab fa-android text-success"></i> Android Natif (Java)</span>
+                    <span class="skill-tag-pill"><i class="fab fa-html5 text-danger"></i> HTML5 &amp; CSS3</span>
+                    <span class="skill-tag-pill"><i class="fab fa-js text-warning"></i> JavaScript (ES6+)</span>
+                    <span class="skill-tag-pill"><i class="fab fa-bootstrap text-primary"></i> Bootstrap 5</span>
+                    <span class="skill-tag-pill"><i class="fas fa-wind text-info"></i> Tailwind CSS</span>
+                    <span class="skill-tag-pill"><i class="fas fa-chart-pie text-accent"></i> Chart.js Data Viz</span>
                 </div>
             </div>
 
-            <!-- Langages de Programmation -->
-            <div class="mb-5">
-                <h3 class="text-accent-blue mb-4"><i class="fas fa-laptop-code me-2"></i>Langages de Programmation</h3>
-                <div class="tags-container">
-                    <span class="tag"><i class="fab fa-python me-1"></i> Python</span>
-                    <span class="tag"><i class="fab fa-java me-1"></i> Java</span>
-                    <span class="tag"><i class="fab fa-java me-1"></i> JEE (Jakarta EE)</span>
-                    <span class="tag"><i class="fas fa-code me-1"></i> C/C++</span>
-                    <span class="tag"><i class="fas fa-code me-1"></i> C#</span>
-                    <span class="tag"><i class="fab fa-js me-1"></i> JavaScript</span>
-                    <span class="tag"><i class="fab fa-php me-1"></i> PHP</span>
+            <!-- 3. Qualité, Tests & Sécurité -->
+            <div class="skills-group-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="skills-group-header">
+                    <div class="skills-group-icon">
+                        <i class="fas fa-vial-circle-check"></i>
+                    </div>
+                    <div>
+                        <h2 class="skills-group-title">Qualité Logicielle, Tests &amp; Sécurité</h2>
+                        <small class="text-muted">Garantie de fiabilité, couverture de code et protection des données</small>
+                    </div>
+                </div>
+                <div class="skills-tags-wrap">
+                    <span class="skill-tag-pill"><i class="fas fa-vial text-success"></i> JUnit 5 (Tests Unitaires)</span>
+                    <span class="skill-tag-pill"><i class="fas fa-flask text-info"></i> Mockito (Bouchonnage)</span>
+                    <span class="skill-tag-pill"><i class="fas fa-robot text-primary"></i> Selenium WebDriver (Tests E2E)</span>
+                    <span class="skill-tag-pill"><i class="fas fa-shield-virus text-danger"></i> SonarQube (Couverture &amp; Dette technique)</span>
+                    <span class="skill-tag-pill"><i class="fas fa-tachometer-alt text-warning"></i> JMeter (Tests de Charge)</span>
+                    <span class="skill-tag-pill"><i class="fas fa-key text-accent"></i> Spring Security &amp; OAuth2 / JWT</span>
+                    <span class="skill-tag-pill"><i class="fas fa-user-lock text-success"></i> OWASP &amp; Cybersécurité</span>
                 </div>
             </div>
 
-            <!--Architecture & Systèmes Distribués-->
-            <div class="mb-5">
-                <h3 class="text-accent-blue mb-4">
-                    <i class="fas fa-network-wired me-2"></i>Architecture & Systèmes Distribués
-                </h3>
-                <div class="tags-container">
-                    <span class="tag">Systèmes distribués</span>
-                    <span class="tag">Microservices</span>
-                    <span class="tag">Architecture client-serveur</span>
-                    <span class="tag">Conception orientée services</span>
+            <!-- 4. DevOps, Cloud & Outils -->
+            <div class="skills-group-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="skills-group-header">
+                    <div class="skills-group-icon">
+                        <i class="fas fa-screwdriver-wrench"></i>
+                    </div>
+                    <div>
+                        <h2 class="skills-group-title">DevOps, Cloud &amp; Environnements</h2>
+                        <small class="text-muted">Automatisation de l'intégration continue, déploiement et conteneurs</small>
+                    </div>
+                </div>
+                <div class="skills-tags-wrap">
+                    <span class="skill-tag-pill"><i class="fab fa-docker text-primary"></i> Docker &amp; Docker Compose</span>
+                    <span class="skill-tag-pill"><i class="fab fa-github text-dark"></i> GitHub Actions (CI/CD)</span>
+                    <span class="skill-tag-pill"><i class="fab fa-git-alt text-danger"></i> Git &amp; Workflow GitHub</span>
+                    <span class="skill-tag-pill"><i class="fab fa-linux text-warning"></i> Linux (Debian, Ubuntu)</span>
+                    <span class="skill-tag-pill"><i class="fas fa-cloud text-info"></i> Cloud Computing (IBM Certified)</span>
+                    <span class="skill-tag-pill"><i class="fas fa-box-archive text-primary"></i> MinIO Object Storage (S3 API)</span>
+                    <span class="skill-tag-pill"><i class="fas fa-laptop-code text-accent"></i> IntelliJ IDEA &amp; VS Code</span>
                 </div>
             </div>
 
-            <!-- Intelligence Artificielle, Data Science & Big Data -->
-            <div class="mb-5">
-                <h3 class="text-accent-blue mb-4"><i class="fas fa-brain me-2"></i>Intelligence Artificielle, Data
-                    Science & Big Data</h3>
-                <div class="tags-container">
-                    <span class="tag">Machine Learning</span>
-                    <span class="tag">Deep Learning</span>
-                    <span class="tag">Data Science</span>
-                    <span class="tag">Intelligence Artificielle</span>
-                    <span class="tag">Traitement des données</span>
-                    <span class="tag">Analyse prédictive</span>
-                    <span class="tag"><i class="fas fa-server me-1"></i> Big Data</span>
-                    <span class="tag">Traitement de données massives</span>
+            <!-- 5. Intelligence Artificielle & Méthodes -->
+            <div class="skills-group-card" data-aos="fade-up" data-aos-delay="250">
+                <div class="skills-group-header">
+                    <div class="skills-group-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div>
+                        <h2 class="skills-group-title">Intelligence Artificielle, IoT &amp; Méthodes Agiles</h2>
+                        <small class="text-muted">Systèmes décisionnels, modélisation prédictive et conduite de projet</small>
+                    </div>
+                </div>
+                <div class="skills-tags-wrap">
+                    <span class="skill-tag-pill"><i class="fab fa-python text-warning"></i> Python (Data Science &amp; ML)</span>
+                    <span class="skill-tag-pill"><i class="fas fa-network-wired text-info"></i> Deep Learning &amp; Réseaux Neuronaux</span>
+                    <span class="skill-tag-pill"><i class="fas fa-eye text-success"></i> OpenCV &amp; YOLOv8 (Vision IA)</span>
+                    <span class="skill-tag-pill"><i class="fas fa-microchip text-danger"></i> IoT (Raspberry Pi &amp; ESP32-CAM)</span>
+                    <span class="skill-tag-pill"><i class="fas fa-project-diagram text-primary"></i> Méthodes Agiles (Scrum &amp; Kanban)</span>
+                    <span class="skill-tag-pill"><i class="fas fa-sitemap text-accent"></i> Modélisation UML &amp; Merise</span>
                 </div>
             </div>
 
-            <!-- Gestion de Projet & Méthodes Agiles -->
-            <div class="mb-5">
-                <h3 class="text-accent-blue mb-4">
-                    <i class="fas fa-diagram-project me-2"></i>Gestion de Projet & Méthodes Agiles
-                </h3>
-                <div class="tags-container">
-                    <span class="tag">Gestion de projet Agile</span>
-                    <span class="tag">Scrum</span>
-                    <span class="tag">Kanban</span>
-                    <span class="tag">Planification par itérations</span>
-                </div>
-            </div>
-
-            <!-- Outils & Environnements de Développement -->
-            <div class="mb-5">
-                <h3 class="text-accent-blue mb-4"><i class="fas fa-tools me-2"></i>Outils & Environnements</h3>
-                <div class="tags-container">
-                    <span class="tag"><i class="fab fa-docker me-1"></i> Docker</span>
-                    <span class="tag"><i class="fab fa-linux me-1"></i> Linux</span>
-                    <span class="tag"><i class="fab fa-git-alt me-1"></i> Git & GitHub</span>
-                    <span class="tag"><i class="fas fa-code me-1"></i> IntelliJ IDEA</span>
-                    <span class="tag"><i class="fas fa-code me-1"></i> Visual Studio Code</span>
-                </div>
-            </div>
-
-            <!-- Qualité, Tests & Sécurité applicative -->
-            <div class="mb-5">
-                <h3 class="text-accent-blue mb-4">
-                    <i class="fas fa-vial me-2"></i>Qualité, Tests & Sécurité applicative
-                </h3>
-                <div class="tags-container">
-                    <span class="tag"><i class="fas fa-vial me-1"></i> Selenium</span>
-                    <span class="tag"><i class="fas fa-magnifying-glass-chart me-1"></i> SonarQube</span>
-                    <span class="tag"><i class="fas fa-key me-1"></i> JWT</span>
-                    <span class="tag">Tests unitaires (JUnit 5, Mockito)</span>
-                    <span class="tag">Tests end-to-end</span>
-                    <span class="tag">Intégration continue (CI/CD)</span>
-                </div>
-            </div>
-
-            <!-- Robotique & Systèmes Intelligents -->
-            <div class="mb-5">
-                <h3 class="text-accent-blue mb-4">
-                    <i class="fas fa-robot me-2"></i>Robotique & Systèmes Intelligents
-                </h3>
-                <div class="tags-container">
-                    <span class="tag">Robotique</span>
-                    <span class="tag">Systèmes intelligents</span>
-                    <span class="tag">Automatisation</span>
-                    <span class="tag">Internet des Objets (IoT)</span>
-                    <span class="tag">Capteurs & actionneurs</span>
-                    <span class="tag">Systèmes embarqués</span>
-                    <span class="tag">Solutions intelligentes</span>
-                </div>
-            </div>
-
-
-            <!-- Sécurité & Réseaux -->
-            <div class="mb-5">
-                <h3 class="text-accent-blue mb-4"><i class="fas fa-shield-alt me-2"></i>Sécurité & Réseaux</h3>
-                <div class="tags-container">
-                    <span class="tag">Sécurité Réseaux</span>
-                    <span class="tag">Administration des bases de données</span>
-                    <span class="tag"><i class="fas fa-database me-1"></i> Oracle Database</span>
-                    <span class="tag">Réseaux TCP/IP</span>
-                </div>
-            </div>
-            <!-- Pédagogie & Encadrement -->
-            <div class="mb-5">
-                <h3 class="text-accent-blue mb-4">
-                    <i class="fas fa-chalkboard-teacher me-2"></i>Pédagogie & Encadrement
-                </h3>
-                <div class="tags-container">
-                    <span class="tag">Encadrement d’étudiants</span>
-                    <span class="tag">Formation technique</span>
-                    <span class="tag">Pédagogie active</span>
-                    <span class="tag">Apprentissage par projet</span>
-                    <span class="tag">Animation d’ateliers</span>
-                    <span class="tag">Vulgarisation technique</span>
-                </div>
-            </div>
-
-            <div class="text-center mt-5">
+            <!-- Bouton de retour -->
+            <div class="text-center mt-5" data-aos="fade-up">
                 <a href="index.html" class="btn btn-primary">
                     <i class="fas fa-arrow-left me-2"></i>Retour à l'accueil
                 </a>
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer-section">
         <div class="container text-center">
             <div class="footer-divider"></div>
-            <p>&copy; 2025 AIT ICHOU Rafik • Ingénieur en Informatique et Réseaux</p>
+            <p class="footer-copy">&copy; 2025-2027 AIT ICHOU Rafik • Ingénieur en Informatique et Réseaux</p>
+            <p class="small text-white-50">Disponible pour un stage PFE dès le 25 janvier 2027</p>
+            <div class="footer-links">
+                <a href="mailto:rafikaitichou@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/RAFIKAITICHOU" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rafik-ait-ichou/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="js/script.js"></script>
 </body>
 
